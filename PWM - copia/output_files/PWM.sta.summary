@@ -1,0 +1,149 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'clk'
+Slack : -77.846
+TNS   : -1535.004
+
+Type  : Slow 1200mV 85C Model Setup 'clkdiv:clock_divider_inst|clk_div'
+Slack : -3.213
+TNS   : -36.072
+
+Type  : Slow 1200mV 85C Model Setup 'debouncer2:d2|clkdiv:u1|clk_div'
+Slack : 0.143
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Setup 'debouncer2:d1|clkdiv:u1|clk_div'
+Slack : 0.157
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'clkdiv:clock_divider_inst|clk_div'
+Slack : 0.347
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'debouncer2:d1|clkdiv:u1|clk_div'
+Slack : 0.433
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'debouncer2:d2|clkdiv:u1|clk_div'
+Slack : 0.434
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'clk'
+Slack : 0.633
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk'
+Slack : -3.000
+TNS   : -147.509
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clkdiv:clock_divider_inst|clk_div'
+Slack : -1.403
+TNS   : -18.239
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'debouncer2:d1|clkdiv:u1|clk_div'
+Slack : -1.403
+TNS   : -4.209
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'debouncer2:d2|clkdiv:u1|clk_div'
+Slack : -1.403
+TNS   : -4.209
+
+Type  : Slow 1200mV 0C Model Setup 'clk'
+Slack : -70.780
+TNS   : -1389.742
+
+Type  : Slow 1200mV 0C Model Setup 'clkdiv:clock_divider_inst|clk_div'
+Slack : -2.872
+TNS   : -32.001
+
+Type  : Slow 1200mV 0C Model Setup 'debouncer2:d2|clkdiv:u1|clk_div'
+Slack : 0.219
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'debouncer2:d1|clkdiv:u1|clk_div'
+Slack : 0.231
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'clkdiv:clock_divider_inst|clk_div'
+Slack : 0.311
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'debouncer2:d1|clkdiv:u1|clk_div'
+Slack : 0.398
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'debouncer2:d2|clkdiv:u1|clk_div'
+Slack : 0.399
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'clk'
+Slack : 0.587
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk'
+Slack : -3.000
+TNS   : -147.509
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clkdiv:clock_divider_inst|clk_div'
+Slack : -1.403
+TNS   : -18.239
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'debouncer2:d1|clkdiv:u1|clk_div'
+Slack : -1.403
+TNS   : -4.209
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'debouncer2:d2|clkdiv:u1|clk_div'
+Slack : -1.403
+TNS   : -4.209
+
+Type  : Fast 1200mV 0C Model Setup 'clk'
+Slack : -31.298
+TNS   : -572.200
+
+Type  : Fast 1200mV 0C Model Setup 'clkdiv:clock_divider_inst|clk_div'
+Slack : -0.785
+TNS   : -7.658
+
+Type  : Fast 1200mV 0C Model Setup 'debouncer2:d2|clkdiv:u1|clk_div'
+Slack : 0.622
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'debouncer2:d1|clkdiv:u1|clk_div'
+Slack : 0.630
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'clkdiv:clock_divider_inst|clk_div'
+Slack : 0.152
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'debouncer2:d1|clkdiv:u1|clk_div'
+Slack : 0.164
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'debouncer2:d2|clkdiv:u1|clk_div'
+Slack : 0.165
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'clk'
+Slack : 0.244
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk'
+Slack : -3.000
+TNS   : -109.973
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clkdiv:clock_divider_inst|clk_div'
+Slack : -1.000
+TNS   : -13.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'debouncer2:d1|clkdiv:u1|clk_div'
+Slack : -1.000
+TNS   : -3.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'debouncer2:d2|clkdiv:u1|clk_div'
+Slack : -1.000
+TNS   : -3.000
+
+------------------------------------------------------------

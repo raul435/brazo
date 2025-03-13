@@ -2,6 +2,7 @@ module PWM_servo (
    input wire clk, 
 	input rst,
    input wire enable,
+	input wire [2:0] sw,
    input wire pb_inc,    // Botón para incrementar
    input wire pb_dec,  // Botón para decrementar
    output reg pwm_out
@@ -99,5 +100,7 @@ begin
 			counter <= counter + 1;
    end
 end
+
+
 
 endmodule

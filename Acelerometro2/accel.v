@@ -33,7 +33,11 @@ module accel (
    input           [2:1]   GSENSOR_INT,
    output                  GSENSOR_SCLK,
    inout                   GSENSOR_SDI,
-   inout                   GSENSOR_SDO
+   inout                   GSENSOR_SDO,
+	
+	output reg  data_out_x, data_out_y, data_out_z
+
+		
    );
 
 //===== Declarations
@@ -110,6 +114,13 @@ module accel (
    wire [7:0] scaled_y = abs_data_y / 10;
    wire [7:0] scaled_z = abs_data_z / 10;
 
+	
+	always @(*)
+	 begin
+		data_out_x = scaled_x;
+		data_out_y = scaled_y;
+		data_out_z = scaled_z;
+	 end
    // Extraer dígitos decenas y unidades para cada eje
    wire [3:0] tens_x = scaled_x / 10;
    wire [3:0] ones_x = scaled_x % 10;

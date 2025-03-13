@@ -71,11 +71,11 @@ CHIP  "Accelerometer"  ASSIGNED TO AN: 10M50DAF484C7G
 Pin Name/Usage               : Location  : Dir.   : I/O Standard      : Voltage : I/O Bank  : User Assignment
 -------------------------------------------------------------------------------------------------------------
 GND                          : A1        : gnd    :                   :         :           :                
-data_out_x[5]                : A2        : output : 2.5 V             :         : 8         : N              
-data_out_x[6]                : A3        : output : 2.5 V             :         : 8         : N              
-data_out_z[15]               : A4        : output : 2.5 V             :         : 8         : N              
-data_out_z[3]                : A5        : output : 2.5 V             :         : 8         : N              
-data_out_z[4]                : A6        : output : 2.5 V             :         : 8         : N              
+data_out_y[10]               : A2        : output : 2.5 V             :         : 8         : N              
+data_out_y[4]                : A3        : output : 2.5 V             :         : 8         : N              
+data_out_x[2]                : A4        : output : 2.5 V             :         : 8         : N              
+data_out_x[7]                : A5        : output : 2.5 V             :         : 8         : N              
+data_out_x[4]                : A6        : output : 2.5 V             :         : 8         : N              
 KEY[1]                       : A7        : input  : 3.3 V Schmitt Trigger :         : 7         : Y              
 LEDR[0]                      : A8        : output : 3.3-V LVTTL       :         : 7         : Y              
 LEDR[1]                      : A9        : output : 3.3-V LVTTL       :         : 7         : Y              
@@ -100,8 +100,8 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : AA5       :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : AA6       :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AA7       :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AA8       :        :                   :         : 3         :                
-data_out_y[0]                : AA9       : output : 2.5 V             :         : 3         : N              
-data_out_y[6]                : AA10      : output : 2.5 V             :         : 3         : N              
+data_out_x[1]                : AA9       : output : 2.5 V             :         : 3         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AA10      :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AA11      :        :                   :         : 4         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AA12      :        :                   :         : 4         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AA13      :        :                   :         : 4         :                
@@ -122,7 +122,7 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : AB5       :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : AB6       :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AB7       :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AB8       :        :                   :         : 3         :                
-data_out_y[9]                : AB9       : output : 2.5 V             :         : 3         : N              
+data_out_x[0]                : AB9       : output : 2.5 V             :         : 3         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AB10      :        :                   :         : 4         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AB11      :        :                   :         : 4         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AB12      :        :                   :         : 4         :                
@@ -136,13 +136,13 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : AB19      :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : AB20      :        :                   :         : 4         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AB21      :        :                   :         : 4         :                
 GND                          : AB22      : gnd    :                   :         :           :                
-data_out_z[9]                : B1        : output : 2.5 V             :         : 8         : N              
-data_out_x[9]                : B2        : output : 2.5 V             :         : 8         : N              
-data_out_x[2]                : B3        : output : 2.5 V             :         : 8         : N              
-data_out_x[10]               : B4        : output : 2.5 V             :         : 8         : N              
-data_out_x[3]                : B5        : output : 2.5 V             :         : 8         : N              
+data_out_z[8]                : B1        : output : 2.5 V             :         : 8         : N              
+data_out_z[13]               : B2        : output : 2.5 V             :         : 8         : N              
+data_out_y[5]                : B3        : output : 2.5 V             :         : 8         : N              
+data_out_y[8]                : B4        : output : 2.5 V             :         : 8         : N              
+data_out_y[6]                : B5        : output : 2.5 V             :         : 8         : N              
 GND                          : B6        : gnd    :                   :         :           :                
-data_out_z[13]               : B7        : output : 2.5 V             :         : 8         : N              
+data_out_x[5]                : B7        : output : 2.5 V             :         : 8         : N              
 KEY[0]                       : B8        : input  : 3.3 V Schmitt Trigger :         : 7         : Y              
 GND                          : B9        : gnd    :                   :         :           :                
 LEDR[3]                      : B10       : output : 3.3-V LVTTL       :         : 7         : Y              
@@ -158,14 +158,14 @@ HEX2[2]                      : B19       : output : 3.3-V LVTTL       :         
 HEX2[0]                      : B20       : output : 3.3-V LVTTL       :         : 6         : Y              
 HEX2[4]                      : B21       : output : 3.3-V LVTTL       :         : 6         : Y              
 HEX2[6]                      : B22       : output : 3.3-V LVTTL       :         : 6         : Y              
-data_out_x[14]               : C1        : output : 2.5 V             :         : 1B        : N              
-data_out_z[5]                : C2        : output : 2.5 V             :         : 8         : N              
-data_out_z[14]               : C3        : output : 2.5 V             :         : 8         : N              
-data_out_x[7]                : C4        : output : 2.5 V             :         : 8         : N              
-data_out_x[15]               : C5        : output : 2.5 V             :         : 8         : N              
-data_out_z[12]               : C6        : output : 2.5 V             :         : 8         : N              
-data_out_z[2]                : C7        : output : 2.5 V             :         : 8         : N              
-data_out_y[13]               : C8        : output : 2.5 V             :         : 8         : N              
+data_out_z[2]                : C1        : output : 2.5 V             :         : 1B        : N              
+data_out_y[0]                : C2        : output : 2.5 V             :         : 8         : N              
+data_out_y[2]                : C3        : output : 2.5 V             :         : 8         : N              
+data_out_y[9]                : C4        : output : 2.5 V             :         : 8         : N              
+data_out_y[11]               : C5        : output : 2.5 V             :         : 8         : N              
+data_out_y[7]                : C6        : output : 2.5 V             :         : 8         : N              
+data_out_x[11]               : C7        : output : 2.5 V             :         : 8         : N              
+data_out_x[15]               : C8        : output : 2.5 V             :         : 8         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : C9        :        :                   :         : 7         :                
 SW[0]                        : C10       : input  : 3.3-V LVTTL       :         : 7         : Y              
 SW[1]                        : C11       : input  : 3.3-V LVTTL       :         : 7         : Y              
@@ -180,16 +180,16 @@ HEX3[3]                      : C19       : output : 3.3-V LVTTL       :         
 HEX3[4]                      : C20       : output : 3.3-V LVTTL       :         : 6         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : C21       :        :                   :         : 6         :                
 HEX2[5]                      : C22       : output : 3.3-V LVTTL       :         : 6         : Y              
-data_out_x[13]               : D1        : output : 2.5 V             :         : 1B        : N              
+data_out_z[5]                : D1        : output : 2.5 V             :         : 1B        : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : D2        :        :                   :         : 1B        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : D3        :        :                   :         : 1B        :                
 GND                          : D4        : gnd    :                   :         :           :                
-data_out_x[12]               : D5        : output : 2.5 V             :         : 8         : N              
-data_out_z[0]                : D6        : output : 2.5 V             :         : 8         : N              
-data_out_z[10]               : D7        : output : 2.5 V             :         : 8         : N              
-data_out_z[1]                : D8        : output : 2.5 V             :         : 8         : N              
-data_out_z[6]                : D9        : output : 2.5 V             :         : 8         : N              
-data_out_z[11]               : D10       : output : 2.5 V             :         : 8         : N              
+data_out_z[9]                : D5        : output : 2.5 V             :         : 8         : N              
+data_out_z[3]                : D6        : output : 2.5 V             :         : 8         : N              
+data_out_y[14]               : D7        : output : 2.5 V             :         : 8         : N              
+data_out_y[3]                : D8        : output : 2.5 V             :         : 8         : N              
+data_out_y[12]               : D9        : output : 2.5 V             :         : 8         : N              
+data_out_x[9]                : D10       : output : 2.5 V             :         : 8         : N              
 GND                          : D11       : gnd    :                   :         :           :                
 SW[2]                        : D12       : input  : 3.3-V LVTTL       :         : 7         : Y              
 LEDR[4]                      : D13       : output : 3.3-V LVTTL       :         : 7         : Y              
@@ -202,17 +202,17 @@ HEX3[5]                      : D19       : output : 3.3-V LVTTL       :         
 GND                          : D20       : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : D21       :        :                   :         : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : D22       :        :                   :         : 6         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : E1        :        :                   :         : 1B        :                
+data_out_z[12]               : E1        : output : 2.5 V             :         : 1B        : N              
 GND                          : E2        : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : E3        :        :                   :         : 1A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : E4        :        :                   :         : 1A        :                
 NC                           : E5        :        :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : E6        :        :                   :         : 8         :                
+data_out_y[1]                : E6        : output : 2.5 V             :         : 8         : N              
 GND                          : E7        : gnd    :                   :         :           :                
-data_out_x[8]                : E8        : output : 2.5 V             :         : 8         : N              
-data_out_z[8]                : E9        : output : 2.5 V             :         : 8         : N              
-data_out_y[12]               : E10       : output : 2.5 V             :         : 8         : N              
-data_out_y[15]               : E11       : output : 2.5 V             :         : 8         : N              
+data_out_y[15]               : E8        : output : 2.5 V             :         : 8         : N              
+data_out_y[13]               : E9        : output : 2.5 V             :         : 8         : N              
+data_out_x[13]               : E10       : output : 2.5 V             :         : 8         : N              
+data_out_x[10]               : E11       : output : 2.5 V             :         : 8         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : E12       :        :                   :         : 7         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : E13       :        :                   :         : 7         :                
 LEDR[6]                      : E14       : output : 3.3-V LVTTL       :         : 7         : Y              
@@ -224,13 +224,13 @@ HEX4[2]                      : E19       : output : 3.3-V LVTTL       :         
 HEX4[1]                      : E20       : output : 3.3-V LVTTL       :         : 6         : Y              
 HEX3[2]                      : E21       : output : 3.3-V LVTTL       :         : 6         : Y              
 HEX3[1]                      : E22       : output : 3.3-V LVTTL       :         : 6         : Y              
-RESERVED_INPUT_WITH_WEAK_PULLUP : F1        :        :                   :         : 1B        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : F2        :        :                   :         : 1B        :                
+data_out_z[15]               : F1        : output : 2.5 V             :         : 1B        : N              
+data_out_z[14]               : F2        : output : 2.5 V             :         : 1B        : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : F3        :        :                   :         : 1A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : F4        :        :                   :         : 1A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : F5        :        :                   :         : 1A        :                
 NC                           : F6        :        :                   :         :           :                
-data_out_x[4]                : F7        : output : 2.5 V             :         : 8         : N              
+data_out_z[6]                : F7        : output : 2.5 V             :         : 8         : N              
 ~ALTERA_CONF_DONE~ / RESERVED_INPUT : F8        : input  : 2.5 V Schmitt Trigger :         : 8         : N              
 VCCIO8                       : F9        : power  :                   : 2.5V    : 8         :                
 GND                          : F10       : gnd    :                   :         :           :                
@@ -246,7 +246,7 @@ HEX4[5]                      : F19       : output : 3.3-V LVTTL       :         
 HEX4[6]                      : F20       : output : 3.3-V LVTTL       :         : 6         : Y              
 HEX3[0]                      : F21       : output : 3.3-V LVTTL       :         : 6         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : F22       :        :                   :         : 6         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : G1        :        :                   :         : 1B        :                
+data_out_z[10]               : G1        : output : 2.5 V             :         : 1B        : N              
 ~ALTERA_TCK~ / RESERVED_INPUT : G2        : input  : 2.5 V Schmitt Trigger :         : 1B        : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : G3        :        :                   :         : 1A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : G4        :        :                   :         : 1A        :                
@@ -268,17 +268,17 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : G19       :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : G20       :        :                   :         : 6         :                
 GND                          : G21       : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : G22       :        :                   :         : 6         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : H1        :        :                   :         : 1B        :                
+data_out_z[0]                : H1        : output : 2.5 V             :         : 1B        : N              
 ~ALTERA_TMS~ / RESERVED_INPUT_WITH_WEAK_PULLUP : H2        : input  : 2.5 V Schmitt Trigger :         : 1B        : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : H3        :        :                   :         : 1A        :                
-data_out_x[0]                : H4        : output : 2.5 V             :         : 1A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : H4        :        :                   :         : 1A        :                
 REFGND                       : H5        :        :                   :         :           :                
 ADC_VREF                     : H6        :        :                   :         :           :                
 VCCA_ADC                     : H7        : power  :                   : 2.5V    :           :                
 VCCA3                        : H8        : power  :                   : 2.5V    :           :                
 ~ALTERA_nCONFIG~ / RESERVED_INPUT : H9        : input  : 2.5 V Schmitt Trigger :         : 8         : N              
 ~ALTERA_CONFIG_SEL~ / RESERVED_INPUT : H10       : input  : 2.5 V             :         : 8         : N              
-data_out_z[7]                : H11       : output : 2.5 V             :         : 8         : N              
+data_out_x[12]               : H11       : output : 2.5 V             :         : 8         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : H12       :        :                   :         : 7         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : H13       :        :                   :         : 7         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : H14       :        :                   :         : 7         :                
@@ -290,7 +290,7 @@ HEX4[4]                      : H19       : output : 3.3-V LVTTL       :         
 RESERVED_INPUT_WITH_WEAK_PULLUP : H20       :        :                   :         : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : H21       :        :                   :         : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : H22       :        :                   :         : 6         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : J1        :        :                   :         : 1B        :                
+data_out_z[11]               : J1        : output : 2.5 V             :         : 1B        : N              
 GND                          : J2        : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : J3        :        :                   :         : 1A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : J4        :        :                   :         : 1A        :                
@@ -299,7 +299,7 @@ GND                          : J6        : gnd    :                   :         
 VCCINT                       : J7        : power  :                   : 1.2V    :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : J8        :        :                   :         : 1A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : J9        :        :                   :         : 1A        :                
-data_out_y[4]                : J10       : output : 2.5 V             :         : 8         : N              
+data_out_x[6]                : J10       : output : 2.5 V             :         : 8         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : J11       :        :                   :         : 7         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : J12       :        :                   :         : 7         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : J13       :        :                   :         : 7         :                
@@ -313,13 +313,13 @@ HEX5[0]                      : J20       : output : 3.3-V LVTTL       :         
 RESERVED_INPUT_WITH_WEAK_PULLUP : J21       :        :                   :         : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : J22       :        :                   :         : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : K1        :        :                   :         : 1B        :                
-data_out_y[1]                : K2        : output : 2.5 V             :         : 1B        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : K2        :        :                   :         : 1B        :                
 GND                          : K3        : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : K4        :        :                   :         : 1A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : K5        :        :                   :         : 1A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : K6        :        :                   :         : 1A        :                
 VCCIO1A                      : K7        : power  :                   : 2.5V    : 1A        :                
-data_out_x[1]                : K8        : output : 2.5 V             :         : 1B        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : K8        :        :                   :         : 1B        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : K9        :        :                   :         : 1B        :                
 GND                          : K10       : gnd    :                   :         :           :                
 VCC                          : K11       : power  :                   : 1.2V    :           :                
@@ -335,14 +335,14 @@ HEX5[1]                      : K20       : output : 3.3-V LVTTL       :         
 RESERVED_INPUT_WITH_WEAK_PULLUP : K21       :        :                   :         : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : K22       :        :                   :         : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : L1        :        :                   :         : 1B        :                
-data_out_y[14]               : L2        : output : 2.5 V             :         : 1B        : N              
+data_out_z[1]                : L2        : output : 2.5 V             :         : 1B        : N              
 DNU                          : L3        :        :                   :         :           :                
 ~ALTERA_TDI~ / RESERVED_INPUT_WITH_WEAK_PULLUP : L4        : input  : 2.5 V Schmitt Trigger :         : 1B        : N              
 GND                          : L5        : gnd    :                   :         :           :                
 VCCIO1A                      : L6        : power  :                   : 2.5V    : 1A        :                
 VCCIO1B                      : L7        : power  :                   : 2.5V    : 1B        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : L8        :        :                   :         : 1B        :                
-data_out_y[11]               : L9        : output : 2.5 V             :         : 1B        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : L9        :        :                   :         : 1B        :                
 VCC                          : L10       : power  :                   : 1.2V    :           :                
 VCC                          : L11       : power  :                   : 1.2V    :           :                
 VCC                          : L12       : power  :                   : 1.2V    :           :                
@@ -355,7 +355,7 @@ HEX5[2]                      : L18       : output : 3.3-V LVTTL       :         
 RESERVED_INPUT_WITH_WEAK_PULLUP : L19       :        :                   :         : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : L20       :        :                   :         : 6         :                
 GND                          : L21       : gnd    :                   :         :           :                
-data_out_y[10]               : L22       : output : 2.5 V             :         : 5         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : L22       :        :                   :         : 5         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : M1        :        :                   :         : 2         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : M2        :        :                   :         : 2         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : M3        :        :                   :         : 1B        :                
@@ -376,8 +376,8 @@ VCCIO6                       : M17       : power  :                   : 3.3V    
 RESERVED_INPUT_WITH_WEAK_PULLUP : M18       :        :                   :         : 6         :                
 GND                          : M19       : gnd    :                   :         :           :                
 HEX5[4]                      : M20       : output : 3.3-V LVTTL       :         : 6         : Y              
-data_out_y[8]                : M21       : output : 2.5 V             :         : 5         : N              
-data_out_y[3]                : M22       : output : 2.5 V             :         : 5         : N              
+data_out_x[14]               : M21       : output : 2.5 V             :         : 5         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : M22       :        :                   :         : 5         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : N1        :        :                   :         : 2         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : N2        :        :                   :         : 2         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : N3        :        :                   :         : 2         :                
@@ -398,7 +398,7 @@ VCCIO6                       : N17       : power  :                   : 3.3V    
 HEX5[3]                      : N18       : output : 3.3-V LVTTL       :         : 6         : Y              
 HEX5[5]                      : N19       : output : 3.3-V LVTTL       :         : 6         : Y              
 HEX5[6]                      : N20       : output : 3.3-V LVTTL       :         : 6         : Y              
-data_out_y[7]                : N21       : output : 2.5 V             :         : 5         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : N21       :        :                   :         : 5         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : N22       :        :                   :         : 5         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : P1        :        :                   :         : 2         :                
 GND                          : P2        : gnd    :                   :         :           :                
@@ -409,7 +409,7 @@ GND                          : P6        : gnd    :                   :         
 VCCIO2                       : P7        : power  :                   : 3.3V    : 2         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : P8        :        :                   :         : 2         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : P9        :        :                   :         : 3         :                
-data_out_x[11]               : P10       : output : 2.5 V             :         : 3         : N              
+data_out_z[7]                : P10       : output : 2.5 V             :         : 3         : N              
 MAX10_CLK1_50                : P11       : input  : 3.3-V LVTTL       :         : 3         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : P12       :        :                   :         : 4         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : P13       :        :                   :         : 4         :                
@@ -417,8 +417,8 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : P14       :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : P15       :        :                   :         : 5         :                
 VCCIO5                       : P16       : power  :                   : 2.5V    : 5         :                
 GND                          : P17       : gnd    :                   :         :           :                
-data_out_y[2]                : P18       : output : 2.5 V             :         : 5         : N              
-data_out_y[5]                : P19       : output : 2.5 V             :         : 5         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : P18       :        :                   :         : 5         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : P19       :        :                   :         : 5         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : P20       :        :                   :         : 5         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : P21       :        :                   :         : 5         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : P22       :        :                   :         : 5         :                
@@ -431,7 +431,7 @@ VCCIO2                       : R6        : power  :                   : 3.3V    
 RESERVED_INPUT_WITH_WEAK_PULLUP : R7        :        :                   :         : 2         :                
 VCCA1                        : R8        : power  :                   : 2.5V    :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : R9        :        :                   :         : 3         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : R10       :        :                   :         : 3         :                
+data_out_z[4]                : R10       : output : 2.5 V             :         : 3         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : R11       :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : R12       :        :                   :         : 4         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : R13       :        :                   :         : 4         :                
@@ -439,7 +439,7 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : R14       :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : R15       :        :                   :         : 5         :                
 VCCIO5                       : R16       : power  :                   : 2.5V    : 5         :                
 VCCIO5                       : R17       : power  :                   : 2.5V    : 5         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : R18       :        :                   :         : 5         :                
+data_out_x[3]                : R18       : output : 2.5 V             :         : 5         : N              
 GND                          : R19       : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : R20       :        :                   :         : 5         :                
 GND                          : R21       : gnd    :                   :         :           :                
@@ -541,7 +541,7 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : Y6        :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : Y7        :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : Y8        :        :                   :         : 3         :                
 GND                          : Y9        : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : Y10       :        :                   :         : 3         :                
+data_out_x[8]                : Y10       : output : 2.5 V             :         : 3         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : Y11       :        :                   :         : 4         :                
 GND                          : Y12       : gnd    :                   :         :           :                
 GSENSOR_INT[2]               : Y13       : input  : 3.3-V LVTTL       :         : 4         : Y              

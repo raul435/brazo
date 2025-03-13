@@ -53,7 +53,7 @@ module accel (
 
    // output data
    wire data_update;
-   wire signed [15:0] data_x, data_y, data_z;
+   wire [15:0] data_x, data_y, data_z;
 
 //===== Phase-locked Loop (PLL) instantiation. Code was copied from a module
 //      produced by Quartus' IP Catalog tool.
@@ -115,18 +115,18 @@ end
 always @(posedge clk_2_hz)
 begin
 	
-	if (data_x < 0)
-		data_out_x <= -data_x;
+	if (data_x[15] == 1)
+		data_out_x <= (~data_x)+1;
 	else
 		data_out_x <= data_x;
 		
-	if (data_y < 0)
-		data_out_y <= -data_y;
+	if (data_y[15] == 1)
+		data_out_y <= (~data_y)+1;
 	else
 		data_out_y <= data_y;
 		
-	if (data_x < 0)
-		data_out_z <= -data_z;
+	if (data_z[15] == 1)
+		data_out_z <= (~data_z)+1;
 	else
 		data_out_z <= data_z;
 	

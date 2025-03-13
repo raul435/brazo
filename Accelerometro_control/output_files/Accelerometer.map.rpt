@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Accelerometer
-Thu Mar 13 08:47:35 2025
+Thu Mar 13 12:16:35 2025
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -58,7 +58,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Mar 13 08:47:35 2025          ;
+; Analysis & Synthesis Status        ; Successful - Thu Mar 13 12:16:35 2025          ;
 ; Quartus Prime Version              ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
 ; Revision Name                      ; Accelerometer                                  ;
 ; Top-level Entity Name              ; accel                                          ;
@@ -292,28 +292,11 @@ Encoding Type:  One-Hot
 +--------------------------------------------------------+--------------------------------------------------------------------+
 ; spi_control:spi_ctrl|data_tx[7]                        ; Stuck at GND due to stuck port data_in                             ;
 ; spi_control:spi_ctrl|spi_serdes:serdes|data_tx_reg[7]  ; Stuck at GND due to stuck port data_in                             ;
-; spi_control:spi_ctrl|data_storage[5][7]                ; Lost fanout                                                        ;
 ; spi_control:spi_ctrl|data_storage[5][6]                ; Lost fanout                                                        ;
 ; spi_control:spi_ctrl|data_storage[5][5]                ; Lost fanout                                                        ;
 ; spi_control:spi_ctrl|data_storage[5][4]                ; Lost fanout                                                        ;
 ; spi_control:spi_ctrl|data_storage[5][3]                ; Lost fanout                                                        ;
 ; spi_control:spi_ctrl|data_storage[5][2]                ; Lost fanout                                                        ;
-; spi_control:spi_ctrl|data_storage[1][7]                ; Lost fanout                                                        ;
-; spi_control:spi_ctrl|data_storage[1][6]                ; Lost fanout                                                        ;
-; spi_control:spi_ctrl|data_storage[1][5]                ; Lost fanout                                                        ;
-; spi_control:spi_ctrl|data_storage[1][4]                ; Lost fanout                                                        ;
-; spi_control:spi_ctrl|data_storage[1][3]                ; Lost fanout                                                        ;
-; spi_control:spi_ctrl|data_storage[1][2]                ; Lost fanout                                                        ;
-; spi_control:spi_ctrl|data_storage[1][1]                ; Lost fanout                                                        ;
-; spi_control:spi_ctrl|data_storage[1][0]                ; Lost fanout                                                        ;
-; spi_control:spi_ctrl|data_storage[0][7]                ; Lost fanout                                                        ;
-; spi_control:spi_ctrl|data_storage[0][6]                ; Lost fanout                                                        ;
-; spi_control:spi_ctrl|data_storage[0][5]                ; Lost fanout                                                        ;
-; spi_control:spi_ctrl|data_storage[0][4]                ; Lost fanout                                                        ;
-; spi_control:spi_ctrl|data_storage[0][3]                ; Lost fanout                                                        ;
-; spi_control:spi_ctrl|data_storage[0][2]                ; Lost fanout                                                        ;
-; spi_control:spi_ctrl|data_storage[0][1]                ; Lost fanout                                                        ;
-; spi_control:spi_ctrl|data_storage[3][7]                ; Lost fanout                                                        ;
 ; spi_control:spi_ctrl|data_storage[3][6]                ; Lost fanout                                                        ;
 ; spi_control:spi_ctrl|data_storage[3][5]                ; Lost fanout                                                        ;
 ; spi_control:spi_ctrl|data_storage[3][4]                ; Lost fanout                                                        ;
@@ -328,6 +311,23 @@ Encoding Type:  One-Hot
 ; spi_control:spi_ctrl|data_storage[2][3]                ; Lost fanout                                                        ;
 ; spi_control:spi_ctrl|data_storage[2][2]                ; Lost fanout                                                        ;
 ; spi_control:spi_ctrl|data_storage[2][1]                ; Lost fanout                                                        ;
+; spi_control:spi_ctrl|data_storage[1][6]                ; Lost fanout                                                        ;
+; spi_control:spi_ctrl|data_storage[1][5]                ; Lost fanout                                                        ;
+; spi_control:spi_ctrl|data_storage[1][4]                ; Lost fanout                                                        ;
+; spi_control:spi_ctrl|data_storage[1][3]                ; Lost fanout                                                        ;
+; spi_control:spi_ctrl|data_storage[1][2]                ; Lost fanout                                                        ;
+; spi_control:spi_ctrl|data_storage[1][1]                ; Lost fanout                                                        ;
+; spi_control:spi_ctrl|data_storage[1][0]                ; Lost fanout                                                        ;
+; spi_control:spi_ctrl|data_storage[0][7]                ; Lost fanout                                                        ;
+; spi_control:spi_ctrl|data_storage[0][6]                ; Lost fanout                                                        ;
+; spi_control:spi_ctrl|data_storage[0][5]                ; Lost fanout                                                        ;
+; spi_control:spi_ctrl|data_storage[0][4]                ; Lost fanout                                                        ;
+; spi_control:spi_ctrl|data_storage[0][3]                ; Lost fanout                                                        ;
+; spi_control:spi_ctrl|data_storage[0][2]                ; Lost fanout                                                        ;
+; spi_control:spi_ctrl|data_storage[0][1]                ; Lost fanout                                                        ;
+; spi_control:spi_ctrl|data_storage[5][7]                ; Lost fanout                                                        ;
+; spi_control:spi_ctrl|data_storage[3][7]                ; Lost fanout                                                        ;
+; spi_control:spi_ctrl|data_storage[1][7]                ; Lost fanout                                                        ;
 ; spi_control:spi_ctrl|spi_serdes:serdes|read            ; Merged with spi_control:spi_ctrl|spi_serdes:serdes|data_tx_reg[15] ;
 ; spi_control:spi_ctrl|spi_serdes:serdes|data_tx_reg[6]  ; Merged with spi_control:spi_ctrl|spi_serdes:serdes|data_tx_reg[2]  ;
 ; spi_control:spi_ctrl|data_tx[6]                        ; Merged with spi_control:spi_ctrl|data_tx[2]                        ;
@@ -872,7 +872,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
-    Info: Processing started: Thu Mar 13 08:47:27 2025
+    Info: Processing started: Thu Mar 13 12:16:28 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Accelerometer -c Accelerometer
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
@@ -909,11 +909,11 @@ Warning (10036): Verilog HDL or VHDL warning at accel.v(105): object "data_y_reg
 Warning (10036): Verilog HDL or VHDL warning at accel.v(137): object "unidades_x" assigned a value but never read File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel.v Line: 137
 Warning (10036): Verilog HDL or VHDL warning at accel.v(141): object "unidades_y" assigned a value but never read File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel.v Line: 141
 Warning (10036): Verilog HDL or VHDL warning at accel.v(145): object "unidades_z" assigned a value but never read File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel.v Line: 145
-Warning (10230): Verilog HDL assignment warning at accel.v(119): truncated value with size 16 to match size of target (1) File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel.v Line: 119
+Warning (10230): Verilog HDL assignment warning at accel.v(119): truncated value with size 32 to match size of target (1) File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel.v Line: 119
 Warning (10230): Verilog HDL assignment warning at accel.v(121): truncated value with size 16 to match size of target (1) File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel.v Line: 121
-Warning (10230): Verilog HDL assignment warning at accel.v(124): truncated value with size 16 to match size of target (1) File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel.v Line: 124
+Warning (10230): Verilog HDL assignment warning at accel.v(124): truncated value with size 32 to match size of target (1) File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel.v Line: 124
 Warning (10230): Verilog HDL assignment warning at accel.v(126): truncated value with size 16 to match size of target (1) File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel.v Line: 126
-Warning (10230): Verilog HDL assignment warning at accel.v(129): truncated value with size 16 to match size of target (1) File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel.v Line: 129
+Warning (10230): Verilog HDL assignment warning at accel.v(129): truncated value with size 32 to match size of target (1) File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel.v Line: 129
 Warning (10230): Verilog HDL assignment warning at accel.v(131): truncated value with size 16 to match size of target (1) File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel.v Line: 131
 Warning (10230): Verilog HDL assignment warning at accel.v(137): truncated value with size 32 to match size of target (4) File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel.v Line: 137
 Warning (10230): Verilog HDL assignment warning at accel.v(138): truncated value with size 32 to match size of target (4) File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel.v Line: 138
@@ -1079,10 +1079,10 @@ Info (21057): Implemented 263 device resources after synthesis - the final resou
     Info (21061): Implemented 186 logic cells
     Info (21065): Implemented 1 PLLs
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 91 warnings
-    Info: Peak virtual memory: 4826 megabytes
-    Info: Processing ended: Thu Mar 13 08:47:35 2025
-    Info: Elapsed time: 00:00:08
-    Info: Total CPU time (on all processors): 00:00:21
+    Info: Peak virtual memory: 4836 megabytes
+    Info: Processing ended: Thu Mar 13 12:16:35 2025
+    Info: Elapsed time: 00:00:07
+    Info: Total CPU time (on all processors): 00:00:20
 
 
 +------------------------------------------+

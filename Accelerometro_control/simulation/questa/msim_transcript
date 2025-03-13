@@ -1,0 +1,169 @@
+# Reading pref.tcl
+# //  Questa Intel Starter FPGA Edition-64
+# //  Version 2023.3 win64 Jul 17 2023
+# //
+# //  Copyright 1991-2023 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# do Accelerometer_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Questa Intel Starter FPGA Edition-64 vmap 2023.3 Lib Mapping Utility 2023.07 Jul 17 2023
+# vmap work rtl_work 
+# Copying c:/intelfpga_lite/23.1std/questa_fse/win64/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control {C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/decoder_7_seg.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 13:29:35 on Mar 13,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control" C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/decoder_7_seg.v 
+# -- Compiling module decoder_7_seg
+# 
+# Top level modules:
+# 	decoder_7_seg
+# End time: 13:29:35 on Mar 13,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control {C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/clkdiv.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 13:29:35 on Mar 13,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control" C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/clkdiv.v 
+# -- Compiling module clkdiv
+# 
+# Top level modules:
+# 	clkdiv
+# End time: 13:29:35 on Mar 13,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/hdl {C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/hdl/spi_serdes.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 13:29:35 on Mar 13,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/hdl" C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/hdl/spi_serdes.v 
+# -- Compiling module spi_serdes
+# 
+# Top level modules:
+# 	spi_serdes
+# End time: 13:29:35 on Mar 13,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/hdl {C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/hdl/spi_control.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 13:29:35 on Mar 13,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/hdl" C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/hdl/spi_control.v 
+# -- Compiling module spi_control
+# 
+# Top level modules:
+# 	spi_control
+# End time: 13:29:36 on Mar 13,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control {C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 13:29:36 on Mar 13,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control" C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel.v 
+# -- Compiling module accel
+# 
+# Top level modules:
+# 	accel
+# End time: 13:29:36 on Mar 13,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control {C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/PLL.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 13:29:36 on Mar 13,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control" C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/PLL.v 
+# -- Compiling module PLL
+# 
+# Top level modules:
+# 	PLL
+# End time: 13:29:36 on Mar 13,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/db {C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/db/pll_altpll.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 13:29:36 on Mar 13,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/db" C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/db/pll_altpll.v 
+# -- Compiling module PLL_altpll
+# 
+# Top level modules:
+# 	PLL_altpll
+# End time: 13:29:36 on Mar 13,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control {C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel_tb.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 13:29:36 on Mar 13,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control" C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel_tb.v 
+# -- Compiling module accel_tb
+# 
+# Top level modules:
+# 	accel_tb
+# End time: 13:29:36 on Mar 13,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs="+acc"  accel_tb
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs=""+acc"" accel_tb 
+# Start time: 13:29:38 on Mar 13,2025
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vopt-143) Recognized 1 FSM in module "spi_control(fast)".
+# ** Note: (vopt-143) Recognized 1 FSM in module "spi_serdes(fast)".
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.accel_tb(fast)
+# Loading work.accel(fast)
+# Loading work.PLL(fast)
+# Loading altera_mf_ver.altpll(fast)
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES(fast)
+# Loading altera_mf_ver.MF_cycloneiii_pll(fast)
+# Loading altera_mf_ver.cda_m_cntr(fast)
+# Loading altera_mf_ver.cda_n_cntr(fast)
+# Loading altera_mf_ver.cda_scale_cntr(fast)
+# Loading altera_mf_ver.pll_iobuf(fast)
+# Loading work.spi_control(fast)
+# Loading work.spi_serdes(fast)
+# Loading work.clkdiv(fast)
+# Loading work.decoder_7_seg(fast)
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# Tiempo=                   0, Displays: 15 15 15 15 15 15
+#  Note : MAX 10 PLL locked to incoming clock
+# Time: 55000  Instance: accel_tb.dut.ip_inst.altpll_component.cycloneiii_pll.pll3
+# ------ Test 1: Valores positivos ------
+# Valores forzados: X=85, Y=120, Z=160
+# data_out_x:     x
+# data_out_y:     x
+# data_out_z:     x
+# HEX0: 15
+# HEX1: 15
+# HEX2: 15
+# HEX3: 15
+# HEX4: 15
+# HEX5: 15
+# 
+# ------ Test 2: Valores negativos ------
+# Valores forzados: X=-55, Y=-80, Z=-100
+# data_out_x:     x
+# data_out_y:     x
+# data_out_z:     x
+# HEX0: 15
+# HEX1: 15
+# HEX2: 15
+# HEX3: 15
+# HEX4: 15
+# HEX5: 15
+# 
+# ------ Simulación completada ------
+# ** Note: $finish    : C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel_tb.v(164)
+#    Time: 2002200 ns  Iteration: 0  Instance: /accel_tb
+# End time: 13:34:32 on Mar 13,2025, Elapsed time: 0:04:54
+# Errors: 0, Warnings: 1

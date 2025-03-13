@@ -1,0 +1,219 @@
+m255
+K4
+z2
+!s12c _opt
+Z0 !s99 nomlopt
+!s11f vlog 2023.3 2023.07, Jul 17 2023
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 dC:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/simulation/questa
+T_opt
+!s110 1741894181
+VgW:Mz<LPkADnXZOT:i^4N3
+04 8 4 work accel_tb fast 0
+=1-3814282e662a-67d33223-b9-6328
+R0
+!s12b OEM100
+!s124 OEM10U12 
+o-quiet -auto_acc_if_foreign -work work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work +acc
+Z2 tCvgOpt 0
+n@_opt
+OL;O;2023.3;77
+vaccel
+2C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel.v
+Z3 !s110 1741894176
+!i10b 1
+!s100 Y0zZPA3EA<T82j41>3iU_0
+IZm3V3c]7J7WjJJXQNFk>P3
+R1
+w1741893619
+8C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel.v
+FC:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel.v
+!i122 4
+L0 9 152
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+Z5 OL;L;2023.3;77
+r1
+!s85 0
+31
+Z6 !s108 1741894176.000000
+!s107 C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control|C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel.v|
+!i113 0
+Z7 o-vlog01compat -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z8 !s92 -vlog01compat -work work +incdir+C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R2
+vaccel_tb
+2C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel_tb.v
+R3
+!i10b 1
+!s100 BFjMO>c=`HDBWnQ<]38=J1
+I0]dQdA_<hB>Z?gfl^zz:M3
+R1
+w1741894003
+8C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel_tb.v
+FC:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel_tb.v
+!i122 7
+L0 4 173
+R4
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel_tb.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control|C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel_tb.v|
+!i113 0
+R7
+R8
+R2
+vclkdiv
+2C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/clkdiv.v
+Z9 !s110 1741894175
+!i10b 1
+!s100 UG7Kd5<Q15f[20CW2;:Rn2
+I402:z_fgOclKo;e6lmKbX3
+R1
+Z10 w1741875090
+8C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/clkdiv.v
+FC:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/clkdiv.v
+!i122 1
+L0 1 43
+R4
+R5
+r1
+!s85 0
+31
+Z11 !s108 1741894175.000000
+!s107 C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/clkdiv.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control|C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/clkdiv.v|
+!i113 0
+R7
+R8
+R2
+vdecoder_7_seg
+2C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/decoder_7_seg.v
+R9
+!i10b 1
+!s100 @lfBB3l_:BNNRK_n?h6EI2
+I@liOMZLh43<hF[D?=DM1;3
+R1
+w1741893620
+8C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/decoder_7_seg.v
+FC:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/decoder_7_seg.v
+!i122 0
+L0 2 32
+R4
+R5
+r1
+!s85 0
+31
+R11
+!s107 C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/decoder_7_seg.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control|C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/decoder_7_seg.v|
+!i113 0
+R7
+R8
+R2
+vPLL
+2C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/PLL.v
+R3
+!i10b 1
+!s100 Fn;=:7nm_6obZf16oD[IL2
+ILf<TjmEcL:kYdF4[^OV9Q0
+R1
+R10
+8C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/PLL.v
+FC:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/PLL.v
+!i122 5
+L0 40 126
+R4
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/PLL.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control|C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/PLL.v|
+!i113 0
+R7
+R8
+R2
+n@p@l@l
+vPLL_altpll
+2C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/db/pll_altpll.v
+R3
+!i10b 1
+!s100 =S^7MMgA;ULOzV7];gUiL0
+I1MXIb<ENDhkM@=Ghl290b1
+R1
+w1741876687
+8C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/db/pll_altpll.v
+FC:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/db/pll_altpll.v
+!i122 6
+L0 30 71
+R4
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/db/pll_altpll.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/db|C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/db/pll_altpll.v|
+!i113 0
+R7
+!s92 -vlog01compat -work work +incdir+C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/db -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R2
+n@p@l@l_altpll
+vspi_control
+2C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/hdl/spi_control.v
+R3
+!i10b 1
+!s100 RIhai]hXCnF^cS0f>>HFo1
+IVYjL8SAcDl0CPhNY:[7zg3
+R1
+R10
+8C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/hdl/spi_control.v
+FC:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/hdl/spi_control.v
+!i122 3
+L0 1 288
+R4
+R5
+r1
+!s85 0
+31
+R11
+!s107 C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/hdl/spi_control.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/hdl|C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/hdl/spi_control.v|
+!i113 0
+R7
+Z12 !s92 -vlog01compat -work work +incdir+C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/hdl -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R2
+vspi_serdes
+2C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/hdl/spi_serdes.v
+R9
+!i10b 1
+!s100 YFGB;Xn8`fCjLJ?A2PVUI0
+I=M^jREdTQO54EDkCgDSNU0
+R1
+R10
+8C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/hdl/spi_serdes.v
+FC:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/hdl/spi_serdes.v
+!i122 2
+L0 1 104
+R4
+R5
+r1
+!s85 0
+31
+R11
+!s107 C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/hdl/spi_serdes.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/hdl|C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/hdl/spi_serdes.v|
+!i113 0
+R7
+R12
+R2

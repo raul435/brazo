@@ -37,9 +37,9 @@ module accel (
    inout 		          		GSENSOR_SDO,
 	
 	//////////// datos de salida //////////////
-	output reg		data_out_x,
-	output reg		data_out_y,
-	output reg		data_out_z
+	output reg	[15:0]	data_out_x,
+	output reg	[15:0]	data_out_y,
+	output reg	[15:0]	data_out_z
 	
    );
 
@@ -156,7 +156,5 @@ decoder_7_seg s3 (centenas_y, HEX3);
 decoder_7_seg s4 (decenas_z, HEX4);
 decoder_7_seg s5 (centenas_z, HEX5);
 
-
-assign LEDR = data_z_reg[9:0];
 
 endmodule

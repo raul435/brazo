@@ -10,7 +10,7 @@ module decoder_7_seg(
 	begin
 		case(decoder_in)
 		
-		0:decoder_out = 1;
+		0: decoder_out = 7'b0000001; // Para mostrar "0"
 		1:decoder_out = 7'b1001111;
 		2:decoder_out = 7'b0010010;
 		3:decoder_out = 7'b0000110;

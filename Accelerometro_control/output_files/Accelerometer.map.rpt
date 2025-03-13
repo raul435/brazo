@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Accelerometer
-Thu Mar 13 12:16:35 2025
+Thu Mar 13 13:07:39 2025
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -23,15 +23,21 @@ Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
  15. Parameter Settings for User Entity Instance: PLL:ip_inst|altpll:altpll_component
  16. Parameter Settings for User Entity Instance: spi_control:spi_ctrl
  17. Parameter Settings for User Entity Instance: clkdiv:DIVISOR_REFRESH
- 18. altpll Parameter Settings by Entity Instance
- 19. Port Connectivity Checks: "decoder_7_seg:s5"
- 20. Port Connectivity Checks: "decoder_7_seg:s3"
- 21. Port Connectivity Checks: "decoder_7_seg:s1"
- 22. Port Connectivity Checks: "spi_control:spi_ctrl"
- 23. Post-Synthesis Netlist Statistics for Top Partition
- 24. Elapsed Time Per Partition
- 25. Analysis & Synthesis Messages
- 26. Analysis & Synthesis Suppressed Messages
+ 18. Parameter Settings for Inferred Entity Instance: lpm_divide:Div0
+ 19. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod0
+ 20. Parameter Settings for Inferred Entity Instance: lpm_divide:Div1
+ 21. Parameter Settings for Inferred Entity Instance: lpm_divide:Div2
+ 22. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod1
+ 23. Parameter Settings for Inferred Entity Instance: lpm_divide:Div3
+ 24. Parameter Settings for Inferred Entity Instance: lpm_divide:Div4
+ 25. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod2
+ 26. Parameter Settings for Inferred Entity Instance: lpm_divide:Div5
+ 27. altpll Parameter Settings by Entity Instance
+ 28. Port Connectivity Checks: "spi_control:spi_ctrl"
+ 29. Post-Synthesis Netlist Statistics for Top Partition
+ 30. Elapsed Time Per Partition
+ 31. Analysis & Synthesis Messages
+ 32. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -58,16 +64,16 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Mar 13 12:16:35 2025          ;
+; Analysis & Synthesis Status        ; Successful - Thu Mar 13 13:07:39 2025          ;
 ; Quartus Prime Version              ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
 ; Revision Name                      ; Accelerometer                                  ;
 ; Top-level Entity Name              ; accel                                          ;
 ; Family                             ; MAX 10                                         ;
-; Total logic elements               ; 185                                            ;
-;     Total combinational functions  ; 142                                            ;
-;     Dedicated logic registers      ; 117                                            ;
-; Total registers                    ; 117                                            ;
-; Total pins                         ; 76                                             ;
+; Total logic elements               ; 1,803                                          ;
+;     Total combinational functions  ; 1,725                                          ;
+;     Dedicated logic registers      ; 198                                            ;
+; Total registers                    ; 198                                            ;
+; Total pins                         ; 121                                            ;
 ; Total virtual pins                 ; 0                                              ;
 ; Total memory bits                  ; 0                                              ;
 ; Embedded Multiplier 9-bit elements ; 0                                              ;
@@ -176,28 +182,46 @@ https://fpgasoftware.intel.com/eula.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-8         ;   0.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processor 3            ;   0.0%      ;
+;     Processor 4            ;   0.0%      ;
+;     Processor 5            ;   0.0%      ;
+;     Processor 6            ;   0.0%      ;
+;     Processor 7            ;   0.0%      ;
+;     Processor 8            ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                      ;
-+----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                  ; Library ;
-+----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------+---------+
-; decoder_7_seg.v                  ; yes             ; User Verilog HDL File        ; C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/decoder_7_seg.v   ;         ;
-; clkdiv.v                         ; yes             ; User Verilog HDL File        ; C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/clkdiv.v          ;         ;
-; hdl/spi_serdes.v                 ; yes             ; User Verilog HDL File        ; C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/hdl/spi_serdes.v  ;         ;
-; hdl/spi_control.v                ; yes             ; User Verilog HDL File        ; C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/hdl/spi_control.v ;         ;
-; accel.v                          ; yes             ; User Verilog HDL File        ; C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel.v           ;         ;
-; PLL.v                            ; yes             ; User Wizard-Generated File   ; C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/PLL.v             ;         ;
-; altpll.tdf                       ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altpll.tdf          ;         ;
-; aglobal231.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/aglobal231.inc      ;         ;
-; stratix_pll.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/stratix_pll.inc     ;         ;
-; stratixii_pll.inc                ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/stratixii_pll.inc   ;         ;
-; cycloneii_pll.inc                ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/cycloneii_pll.inc   ;         ;
-; db/pll_altpll.v                  ; yes             ; Auto-Generated Megafunction  ; C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/db/pll_altpll.v   ;         ;
-+----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------+---------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                               ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                           ; Library ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------+---------+
+; decoder_7_seg.v                  ; yes             ; User Verilog HDL File        ; C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/decoder_7_seg.v            ;         ;
+; clkdiv.v                         ; yes             ; User Verilog HDL File        ; C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/clkdiv.v                   ;         ;
+; hdl/spi_serdes.v                 ; yes             ; User Verilog HDL File        ; C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/hdl/spi_serdes.v           ;         ;
+; hdl/spi_control.v                ; yes             ; User Verilog HDL File        ; C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/hdl/spi_control.v          ;         ;
+; accel.v                          ; yes             ; User Verilog HDL File        ; C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel.v                    ;         ;
+; PLL.v                            ; yes             ; User Wizard-Generated File   ; C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/PLL.v                      ;         ;
+; altpll.tdf                       ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altpll.tdf                   ;         ;
+; aglobal231.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/aglobal231.inc               ;         ;
+; stratix_pll.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/stratix_pll.inc              ;         ;
+; stratixii_pll.inc                ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/stratixii_pll.inc            ;         ;
+; cycloneii_pll.inc                ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/cycloneii_pll.inc            ;         ;
+; db/pll_altpll.v                  ; yes             ; Auto-Generated Megafunction  ; C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/db/pll_altpll.v            ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_divide.tdf               ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/abs_divider.inc              ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/sign_div_unsign.inc          ;         ;
+; db/lpm_divide_otl.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/db/lpm_divide_otl.tdf      ;         ;
+; db/sign_div_unsign_qlh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/db/sign_div_unsign_qlh.tdf ;         ;
+; db/alt_u_div_uhe.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/db/alt_u_div_uhe.tdf       ;         ;
+; db/add_sub_t3c.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/db/add_sub_t3c.tdf         ;         ;
+; db/add_sub_u3c.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/db/add_sub_u3c.tdf         ;         ;
+; db/lpm_divide_rll.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/db/lpm_divide_rll.tdf      ;         ;
+; db/lpm_divide_rtl.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/db/lpm_divide_rtl.tdf      ;         ;
+; db/sign_div_unsign_tlh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/db/sign_div_unsign_tlh.tdf ;         ;
+; db/alt_u_div_4ie.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/db/alt_u_div_4ie.tdf       ;         ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------+---------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------+
@@ -205,23 +229,23 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+--------------------------------------------------------------------------------+
 ; Resource                                    ; Usage                                                                          ;
 +---------------------------------------------+--------------------------------------------------------------------------------+
-; Estimated Total logic elements              ; 185                                                                            ;
+; Estimated Total logic elements              ; 1,803                                                                          ;
 ;                                             ;                                                                                ;
-; Total combinational functions               ; 142                                                                            ;
+; Total combinational functions               ; 1725                                                                           ;
 ; Logic element usage by number of LUT inputs ;                                                                                ;
-;     -- 4 input functions                    ; 57                                                                             ;
-;     -- 3 input functions                    ; 36                                                                             ;
-;     -- <=2 input functions                  ; 49                                                                             ;
+;     -- 4 input functions                    ; 366                                                                            ;
+;     -- 3 input functions                    ; 453                                                                            ;
+;     -- <=2 input functions                  ; 906                                                                            ;
 ;                                             ;                                                                                ;
 ; Logic elements by mode                      ;                                                                                ;
-;     -- normal mode                          ; 104                                                                            ;
-;     -- arithmetic mode                      ; 38                                                                             ;
+;     -- normal mode                          ; 1192                                                                           ;
+;     -- arithmetic mode                      ; 533                                                                            ;
 ;                                             ;                                                                                ;
-; Total registers                             ; 117                                                                            ;
-;     -- Dedicated logic registers            ; 117                                                                            ;
+; Total registers                             ; 198                                                                            ;
+;     -- Dedicated logic registers            ; 198                                                                            ;
 ;     -- I/O registers                        ; 0                                                                              ;
 ;                                             ;                                                                                ;
-; I/O pins                                    ; 76                                                                             ;
+; I/O pins                                    ; 121                                                                            ;
 ;                                             ;                                                                                ;
 ; Embedded Multiplier 9-bit elements          ; 0                                                                              ;
 ;                                             ;                                                                                ;
@@ -229,25 +253,67 @@ https://fpgasoftware.intel.com/eula.
 ;     -- PLLs                                 ; 1                                                                              ;
 ;                                             ;                                                                                ;
 ; Maximum fan-out node                        ; PLL:ip_inst|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ;
-; Maximum fan-out                             ; 73                                                                             ;
-; Total fan-out                               ; 868                                                                            ;
-; Average fan-out                             ; 2.10                                                                           ;
+; Maximum fan-out                             ; 109                                                                            ;
+; Total fan-out                               ; 5261                                                                           ;
+; Average fan-out                             ; 2.43                                                                           ;
 +---------------------------------------------+--------------------------------------------------------------------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                           ;
-+--------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------------------------+-------------+--------------+
-; Compilation Hierarchy Node           ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                  ; Entity Name ; Library Name ;
-+--------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------------------------+-------------+--------------+
-; |accel                               ; 142 (0)             ; 117 (13)                  ; 0           ; 0          ; 0            ; 0       ; 0         ; 76   ; 0            ; 0          ; |accel                                                               ; accel       ; work         ;
-;    |PLL:ip_inst|                     ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |accel|PLL:ip_inst                                                   ; PLL         ; work         ;
-;       |altpll:altpll_component|      ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |accel|PLL:ip_inst|altpll:altpll_component                           ; altpll      ; work         ;
-;          |PLL_altpll:auto_generated| ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |accel|PLL:ip_inst|altpll:altpll_component|PLL_altpll:auto_generated ; PLL_altpll  ; work         ;
-;    |clkdiv:DIVISOR_REFRESH|          ; 55 (55)             ; 33 (33)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |accel|clkdiv:DIVISOR_REFRESH                                        ; clkdiv      ; work         ;
-;    |spi_control:spi_ctrl|            ; 87 (59)             ; 71 (43)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |accel|spi_control:spi_ctrl                                          ; spi_control ; work         ;
-;       |spi_serdes:serdes|            ; 28 (28)             ; 28 (28)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |accel|spi_control:spi_ctrl|spi_serdes:serdes                        ; spi_serdes  ; work         ;
-+--------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------------------------+-------------+--------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                       ;
++----------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; Compilation Hierarchy Node             ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                                    ; Entity Name         ; Library Name ;
++----------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; |accel                                 ; 1725 (49)           ; 198 (58)                  ; 0           ; 0          ; 0            ; 0       ; 0         ; 121  ; 0            ; 0          ; |accel                                                                                                 ; accel               ; work         ;
+;    |PLL:ip_inst|                       ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |accel|PLL:ip_inst                                                                                     ; PLL                 ; work         ;
+;       |altpll:altpll_component|        ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |accel|PLL:ip_inst|altpll:altpll_component                                                             ; altpll              ; work         ;
+;          |PLL_altpll:auto_generated|   ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |accel|PLL:ip_inst|altpll:altpll_component|PLL_altpll:auto_generated                                   ; PLL_altpll          ; work         ;
+;    |clkdiv:DIVISOR_REFRESH|            ; 55 (55)             ; 33 (33)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |accel|clkdiv:DIVISOR_REFRESH                                                                          ; clkdiv              ; work         ;
+;    |decoder_7_seg:s0|                  ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |accel|decoder_7_seg:s0                                                                                ; decoder_7_seg       ; work         ;
+;    |decoder_7_seg:s1|                  ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |accel|decoder_7_seg:s1                                                                                ; decoder_7_seg       ; work         ;
+;    |decoder_7_seg:s2|                  ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |accel|decoder_7_seg:s2                                                                                ; decoder_7_seg       ; work         ;
+;    |decoder_7_seg:s3|                  ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |accel|decoder_7_seg:s3                                                                                ; decoder_7_seg       ; work         ;
+;    |decoder_7_seg:s4|                  ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |accel|decoder_7_seg:s4                                                                                ; decoder_7_seg       ; work         ;
+;    |decoder_7_seg:s5|                  ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |accel|decoder_7_seg:s5                                                                                ; decoder_7_seg       ; work         ;
+;    |lpm_divide:Div0|                   ; 160 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |accel|lpm_divide:Div0                                                                                 ; lpm_divide          ; work         ;
+;       |lpm_divide_otl:auto_generated|  ; 160 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |accel|lpm_divide:Div0|lpm_divide_otl:auto_generated                                                   ; lpm_divide_otl      ; work         ;
+;          |sign_div_unsign_qlh:divider| ; 160 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |accel|lpm_divide:Div0|lpm_divide_otl:auto_generated|sign_div_unsign_qlh:divider                       ; sign_div_unsign_qlh ; work         ;
+;             |alt_u_div_uhe:divider|    ; 160 (160)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |accel|lpm_divide:Div0|lpm_divide_otl:auto_generated|sign_div_unsign_qlh:divider|alt_u_div_uhe:divider ; alt_u_div_uhe       ; work         ;
+;    |lpm_divide:Div1|                   ; 201 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |accel|lpm_divide:Div1                                                                                 ; lpm_divide          ; work         ;
+;       |lpm_divide_rtl:auto_generated|  ; 201 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |accel|lpm_divide:Div1|lpm_divide_rtl:auto_generated                                                   ; lpm_divide_rtl      ; work         ;
+;          |sign_div_unsign_tlh:divider| ; 201 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |accel|lpm_divide:Div1|lpm_divide_rtl:auto_generated|sign_div_unsign_tlh:divider                       ; sign_div_unsign_tlh ; work         ;
+;             |alt_u_div_4ie:divider|    ; 201 (201)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |accel|lpm_divide:Div1|lpm_divide_rtl:auto_generated|sign_div_unsign_tlh:divider|alt_u_div_4ie:divider ; alt_u_div_4ie       ; work         ;
+;    |lpm_divide:Div2|                   ; 160 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |accel|lpm_divide:Div2                                                                                 ; lpm_divide          ; work         ;
+;       |lpm_divide_otl:auto_generated|  ; 160 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |accel|lpm_divide:Div2|lpm_divide_otl:auto_generated                                                   ; lpm_divide_otl      ; work         ;
+;          |sign_div_unsign_qlh:divider| ; 160 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |accel|lpm_divide:Div2|lpm_divide_otl:auto_generated|sign_div_unsign_qlh:divider                       ; sign_div_unsign_qlh ; work         ;
+;             |alt_u_div_uhe:divider|    ; 160 (160)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |accel|lpm_divide:Div2|lpm_divide_otl:auto_generated|sign_div_unsign_qlh:divider|alt_u_div_uhe:divider ; alt_u_div_uhe       ; work         ;
+;    |lpm_divide:Div3|                   ; 201 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |accel|lpm_divide:Div3                                                                                 ; lpm_divide          ; work         ;
+;       |lpm_divide_rtl:auto_generated|  ; 201 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |accel|lpm_divide:Div3|lpm_divide_rtl:auto_generated                                                   ; lpm_divide_rtl      ; work         ;
+;          |sign_div_unsign_tlh:divider| ; 201 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |accel|lpm_divide:Div3|lpm_divide_rtl:auto_generated|sign_div_unsign_tlh:divider                       ; sign_div_unsign_tlh ; work         ;
+;             |alt_u_div_4ie:divider|    ; 201 (201)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |accel|lpm_divide:Div3|lpm_divide_rtl:auto_generated|sign_div_unsign_tlh:divider|alt_u_div_4ie:divider ; alt_u_div_4ie       ; work         ;
+;    |lpm_divide:Div4|                   ; 160 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |accel|lpm_divide:Div4                                                                                 ; lpm_divide          ; work         ;
+;       |lpm_divide_otl:auto_generated|  ; 160 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |accel|lpm_divide:Div4|lpm_divide_otl:auto_generated                                                   ; lpm_divide_otl      ; work         ;
+;          |sign_div_unsign_qlh:divider| ; 160 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |accel|lpm_divide:Div4|lpm_divide_otl:auto_generated|sign_div_unsign_qlh:divider                       ; sign_div_unsign_qlh ; work         ;
+;             |alt_u_div_uhe:divider|    ; 160 (160)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |accel|lpm_divide:Div4|lpm_divide_otl:auto_generated|sign_div_unsign_qlh:divider|alt_u_div_uhe:divider ; alt_u_div_uhe       ; work         ;
+;    |lpm_divide:Div5|                   ; 201 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |accel|lpm_divide:Div5                                                                                 ; lpm_divide          ; work         ;
+;       |lpm_divide_rtl:auto_generated|  ; 201 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |accel|lpm_divide:Div5|lpm_divide_rtl:auto_generated                                                   ; lpm_divide_rtl      ; work         ;
+;          |sign_div_unsign_tlh:divider| ; 201 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |accel|lpm_divide:Div5|lpm_divide_rtl:auto_generated|sign_div_unsign_tlh:divider                       ; sign_div_unsign_tlh ; work         ;
+;             |alt_u_div_4ie:divider|    ; 201 (201)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |accel|lpm_divide:Div5|lpm_divide_rtl:auto_generated|sign_div_unsign_tlh:divider|alt_u_div_4ie:divider ; alt_u_div_4ie       ; work         ;
+;    |lpm_divide:Mod0|                   ; 136 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |accel|lpm_divide:Mod0                                                                                 ; lpm_divide          ; work         ;
+;       |lpm_divide_rll:auto_generated|  ; 136 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |accel|lpm_divide:Mod0|lpm_divide_rll:auto_generated                                                   ; lpm_divide_rll      ; work         ;
+;          |sign_div_unsign_qlh:divider| ; 136 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |accel|lpm_divide:Mod0|lpm_divide_rll:auto_generated|sign_div_unsign_qlh:divider                       ; sign_div_unsign_qlh ; work         ;
+;             |alt_u_div_uhe:divider|    ; 136 (136)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |accel|lpm_divide:Mod0|lpm_divide_rll:auto_generated|sign_div_unsign_qlh:divider|alt_u_div_uhe:divider ; alt_u_div_uhe       ; work         ;
+;    |lpm_divide:Mod1|                   ; 136 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |accel|lpm_divide:Mod1                                                                                 ; lpm_divide          ; work         ;
+;       |lpm_divide_rll:auto_generated|  ; 136 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |accel|lpm_divide:Mod1|lpm_divide_rll:auto_generated                                                   ; lpm_divide_rll      ; work         ;
+;          |sign_div_unsign_qlh:divider| ; 136 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |accel|lpm_divide:Mod1|lpm_divide_rll:auto_generated|sign_div_unsign_qlh:divider                       ; sign_div_unsign_qlh ; work         ;
+;             |alt_u_div_uhe:divider|    ; 136 (136)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |accel|lpm_divide:Mod1|lpm_divide_rll:auto_generated|sign_div_unsign_qlh:divider|alt_u_div_uhe:divider ; alt_u_div_uhe       ; work         ;
+;    |lpm_divide:Mod2|                   ; 136 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |accel|lpm_divide:Mod2                                                                                 ; lpm_divide          ; work         ;
+;       |lpm_divide_rll:auto_generated|  ; 136 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |accel|lpm_divide:Mod2|lpm_divide_rll:auto_generated                                                   ; lpm_divide_rll      ; work         ;
+;          |sign_div_unsign_qlh:divider| ; 136 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |accel|lpm_divide:Mod2|lpm_divide_rll:auto_generated|sign_div_unsign_qlh:divider                       ; sign_div_unsign_qlh ; work         ;
+;             |alt_u_div_uhe:divider|    ; 136 (136)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |accel|lpm_divide:Mod2|lpm_divide_rll:auto_generated|sign_div_unsign_qlh:divider|alt_u_div_uhe:divider ; alt_u_div_uhe       ; work         ;
+;    |spi_control:spi_ctrl|              ; 88 (60)             ; 107 (79)                  ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |accel|spi_control:spi_ctrl                                                                            ; spi_control         ; work         ;
+;       |spi_serdes:serdes|              ; 28 (28)             ; 28 (28)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |accel|spi_control:spi_ctrl|spi_serdes:serdes                                                          ; spi_serdes          ; work         ;
++----------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------------------------------------------------------------------------------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -292,42 +358,6 @@ Encoding Type:  One-Hot
 +--------------------------------------------------------+--------------------------------------------------------------------+
 ; spi_control:spi_ctrl|data_tx[7]                        ; Stuck at GND due to stuck port data_in                             ;
 ; spi_control:spi_ctrl|spi_serdes:serdes|data_tx_reg[7]  ; Stuck at GND due to stuck port data_in                             ;
-; spi_control:spi_ctrl|data_storage[5][6]                ; Lost fanout                                                        ;
-; spi_control:spi_ctrl|data_storage[5][5]                ; Lost fanout                                                        ;
-; spi_control:spi_ctrl|data_storage[5][4]                ; Lost fanout                                                        ;
-; spi_control:spi_ctrl|data_storage[5][3]                ; Lost fanout                                                        ;
-; spi_control:spi_ctrl|data_storage[5][2]                ; Lost fanout                                                        ;
-; spi_control:spi_ctrl|data_storage[3][6]                ; Lost fanout                                                        ;
-; spi_control:spi_ctrl|data_storage[3][5]                ; Lost fanout                                                        ;
-; spi_control:spi_ctrl|data_storage[3][4]                ; Lost fanout                                                        ;
-; spi_control:spi_ctrl|data_storage[3][3]                ; Lost fanout                                                        ;
-; spi_control:spi_ctrl|data_storage[3][2]                ; Lost fanout                                                        ;
-; spi_control:spi_ctrl|data_storage[3][1]                ; Lost fanout                                                        ;
-; spi_control:spi_ctrl|data_storage[3][0]                ; Lost fanout                                                        ;
-; spi_control:spi_ctrl|data_storage[2][7]                ; Lost fanout                                                        ;
-; spi_control:spi_ctrl|data_storage[2][6]                ; Lost fanout                                                        ;
-; spi_control:spi_ctrl|data_storage[2][5]                ; Lost fanout                                                        ;
-; spi_control:spi_ctrl|data_storage[2][4]                ; Lost fanout                                                        ;
-; spi_control:spi_ctrl|data_storage[2][3]                ; Lost fanout                                                        ;
-; spi_control:spi_ctrl|data_storage[2][2]                ; Lost fanout                                                        ;
-; spi_control:spi_ctrl|data_storage[2][1]                ; Lost fanout                                                        ;
-; spi_control:spi_ctrl|data_storage[1][6]                ; Lost fanout                                                        ;
-; spi_control:spi_ctrl|data_storage[1][5]                ; Lost fanout                                                        ;
-; spi_control:spi_ctrl|data_storage[1][4]                ; Lost fanout                                                        ;
-; spi_control:spi_ctrl|data_storage[1][3]                ; Lost fanout                                                        ;
-; spi_control:spi_ctrl|data_storage[1][2]                ; Lost fanout                                                        ;
-; spi_control:spi_ctrl|data_storage[1][1]                ; Lost fanout                                                        ;
-; spi_control:spi_ctrl|data_storage[1][0]                ; Lost fanout                                                        ;
-; spi_control:spi_ctrl|data_storage[0][7]                ; Lost fanout                                                        ;
-; spi_control:spi_ctrl|data_storage[0][6]                ; Lost fanout                                                        ;
-; spi_control:spi_ctrl|data_storage[0][5]                ; Lost fanout                                                        ;
-; spi_control:spi_ctrl|data_storage[0][4]                ; Lost fanout                                                        ;
-; spi_control:spi_ctrl|data_storage[0][3]                ; Lost fanout                                                        ;
-; spi_control:spi_ctrl|data_storage[0][2]                ; Lost fanout                                                        ;
-; spi_control:spi_ctrl|data_storage[0][1]                ; Lost fanout                                                        ;
-; spi_control:spi_ctrl|data_storage[5][7]                ; Lost fanout                                                        ;
-; spi_control:spi_ctrl|data_storage[3][7]                ; Lost fanout                                                        ;
-; spi_control:spi_ctrl|data_storage[1][7]                ; Lost fanout                                                        ;
 ; spi_control:spi_ctrl|spi_serdes:serdes|read            ; Merged with spi_control:spi_ctrl|spi_serdes:serdes|data_tx_reg[15] ;
 ; spi_control:spi_ctrl|spi_serdes:serdes|data_tx_reg[6]  ; Merged with spi_control:spi_ctrl|spi_serdes:serdes|data_tx_reg[2]  ;
 ; spi_control:spi_ctrl|data_tx[6]                        ; Merged with spi_control:spi_ctrl|data_tx[2]                        ;
@@ -337,7 +367,7 @@ Encoding Type:  One-Hot
 ; spi_control:spi_ctrl|spi_serdes:serdes|data_tx_reg[13] ; Stuck at VCC due to stuck port data_in                             ;
 ; spi_control:spi_ctrl|spi_serdes:serdes|state~5         ; Lost fanout                                                        ;
 ; spi_control:spi_ctrl|spi_serdes:serdes|state~6         ; Lost fanout                                                        ;
-; Total Number of Removed Registers = 47                 ;                                                                    ;
+; Total Number of Removed Registers = 11                 ;                                                                    ;
 +--------------------------------------------------------+--------------------------------------------------------------------+
 
 
@@ -360,12 +390,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 117   ;
+; Total registers                              ; 198   ;
 ; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Synchronous Load   ; 48    ;
 ; Number of registers using Asynchronous Clear ; 56    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 50    ;
+; Number of registers using Clock Enable       ; 88    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -776,6 +806,213 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Div0 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 16             ; Untyped                ;
+; LPM_WIDTHD             ; 4              ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_otl ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod0 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 16             ; Untyped                ;
+; LPM_WIDTHD             ; 4              ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_rll ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Div1 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 16             ; Untyped                ;
+; LPM_WIDTHD             ; 7              ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_rtl ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Div2 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 16             ; Untyped                ;
+; LPM_WIDTHD             ; 4              ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_otl ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod1 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 16             ; Untyped                ;
+; LPM_WIDTHD             ; 4              ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_rll ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Div3 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 16             ; Untyped                ;
+; LPM_WIDTHD             ; 7              ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_rtl ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Div4 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 16             ; Untyped                ;
+; LPM_WIDTHD             ; 4              ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_otl ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod2 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 16             ; Untyped                ;
+; LPM_WIDTHD             ; 4              ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_rll ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Div5 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 16             ; Untyped                ;
+; LPM_WIDTHD             ; 7              ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_rtl ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +---------------------------------------------------------------------+
 ; altpll Parameter Settings by Entity Instance                        ;
 +-------------------------------+-------------------------------------+
@@ -793,33 +1030,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------+-------------------------------------+
 
 
-+----------------------------------------------------+
-; Port Connectivity Checks: "decoder_7_seg:s5"       ;
-+------------------+-------+----------+--------------+
-; Port             ; Type  ; Severity ; Details      ;
-+------------------+-------+----------+--------------+
-; decoder_in[3..1] ; Input ; Info     ; Stuck at GND ;
-+------------------+-------+----------+--------------+
-
-
-+----------------------------------------------------+
-; Port Connectivity Checks: "decoder_7_seg:s3"       ;
-+------------------+-------+----------+--------------+
-; Port             ; Type  ; Severity ; Details      ;
-+------------------+-------+----------+--------------+
-; decoder_in[3..1] ; Input ; Info     ; Stuck at GND ;
-+------------------+-------+----------+--------------+
-
-
-+----------------------------------------------------+
-; Port Connectivity Checks: "decoder_7_seg:s1"       ;
-+------------------+-------+----------+--------------+
-; Port             ; Type  ; Severity ; Details      ;
-+------------------+-------+----------+--------------+
-; decoder_in[3..1] ; Input ; Info     ; Stuck at GND ;
-+------------------+-------+----------+--------------+
-
-
 +-----------------------------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "spi_control:spi_ctrl"                                                                      ;
 +-------------+--------+----------+-------------------------------------------------------------------------------------+
@@ -834,26 +1044,29 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 76                          ;
-; cycloneiii_ff         ; 117                         ;
+; boundary_port         ; 121                         ;
+; cycloneiii_ff         ; 198                         ;
 ;     CLR               ; 52                          ;
-;     ENA               ; 46                          ;
+;     ENA               ; 84                          ;
 ;     ENA CLR           ; 4                           ;
-;     plain             ; 15                          ;
+;     SLD               ; 48                          ;
+;     plain             ; 10                          ;
 ; cycloneiii_io_obuf    ; 2                           ;
-; cycloneiii_lcell_comb ; 145                         ;
-;     arith             ; 38                          ;
-;         2 data inputs ; 38                          ;
-;     normal            ; 107                         ;
-;         0 data inputs ; 2                           ;
+; cycloneiii_lcell_comb ; 1732                        ;
+;     arith             ; 533                         ;
 ;         1 data inputs ; 3                           ;
-;         2 data inputs ; 9                           ;
-;         3 data inputs ; 36                          ;
-;         4 data inputs ; 57                          ;
+;         2 data inputs ; 116                         ;
+;         3 data inputs ; 414                         ;
+;     normal            ; 1199                        ;
+;         0 data inputs ; 100                         ;
+;         1 data inputs ; 42                          ;
+;         2 data inputs ; 652                         ;
+;         3 data inputs ; 39                          ;
+;         4 data inputs ; 366                         ;
 ; cycloneiii_pll        ; 1                           ;
 ;                       ;                             ;
-; Max LUT depth         ; 5.00                        ;
-; Average LUT depth     ; 2.63                        ;
+; Max LUT depth         ; 34.10                       ;
+; Average LUT depth     ; 25.46                       ;
 +-----------------------+-----------------------------+
 
 
@@ -862,7 +1075,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -872,7 +1085,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
-    Info: Processing started: Thu Mar 13 12:16:28 2025
+    Info: Processing started: Thu Mar 13 13:07:30 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Accelerometer -c Accelerometer
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
@@ -909,12 +1122,9 @@ Warning (10036): Verilog HDL or VHDL warning at accel.v(105): object "data_y_reg
 Warning (10036): Verilog HDL or VHDL warning at accel.v(137): object "unidades_x" assigned a value but never read File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel.v Line: 137
 Warning (10036): Verilog HDL or VHDL warning at accel.v(141): object "unidades_y" assigned a value but never read File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel.v Line: 141
 Warning (10036): Verilog HDL or VHDL warning at accel.v(145): object "unidades_z" assigned a value but never read File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel.v Line: 145
-Warning (10230): Verilog HDL assignment warning at accel.v(119): truncated value with size 32 to match size of target (1) File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel.v Line: 119
-Warning (10230): Verilog HDL assignment warning at accel.v(121): truncated value with size 16 to match size of target (1) File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel.v Line: 121
-Warning (10230): Verilog HDL assignment warning at accel.v(124): truncated value with size 32 to match size of target (1) File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel.v Line: 124
-Warning (10230): Verilog HDL assignment warning at accel.v(126): truncated value with size 16 to match size of target (1) File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel.v Line: 126
-Warning (10230): Verilog HDL assignment warning at accel.v(129): truncated value with size 32 to match size of target (1) File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel.v Line: 129
-Warning (10230): Verilog HDL assignment warning at accel.v(131): truncated value with size 16 to match size of target (1) File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel.v Line: 131
+Warning (10230): Verilog HDL assignment warning at accel.v(119): truncated value with size 32 to match size of target (16) File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel.v Line: 119
+Warning (10230): Verilog HDL assignment warning at accel.v(124): truncated value with size 32 to match size of target (16) File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel.v Line: 124
+Warning (10230): Verilog HDL assignment warning at accel.v(129): truncated value with size 32 to match size of target (16) File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel.v Line: 129
 Warning (10230): Verilog HDL assignment warning at accel.v(137): truncated value with size 32 to match size of target (4) File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel.v Line: 137
 Warning (10230): Verilog HDL assignment warning at accel.v(138): truncated value with size 32 to match size of target (4) File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel.v Line: 138
 Warning (10230): Verilog HDL assignment warning at accel.v(139): truncated value with size 32 to match size of target (4) File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel.v Line: 139
@@ -1000,57 +1210,91 @@ Warning (10230): Verilog HDL assignment warning at spi_serdes.v(78): truncated v
 Warning (10230): Verilog HDL assignment warning at spi_serdes.v(91): truncated value with size 32 to match size of target (4) File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/hdl/spi_serdes.v Line: 91
 Info (12128): Elaborating entity "clkdiv" for hierarchy "clkdiv:DIVISOR_REFRESH" File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel.v Line: 103
 Info (12128): Elaborating entity "decoder_7_seg" for hierarchy "decoder_7_seg:s0" File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel.v Line: 150
+Info (278001): Inferred 9 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div0" File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel.v Line: 138
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod0" File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel.v Line: 138
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div1" File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel.v Line: 139
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div2" File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel.v Line: 142
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod1" File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel.v Line: 142
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div3" File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel.v Line: 143
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div4" File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel.v Line: 146
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod2" File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel.v Line: 146
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div5" File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel.v Line: 147
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Div0" File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel.v Line: 138
+Info (12133): Instantiated megafunction "lpm_divide:Div0" with the following parameter: File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel.v Line: 138
+    Info (12134): Parameter "LPM_WIDTHN" = "16"
+    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_otl.tdf
+    Info (12023): Found entity 1: lpm_divide_otl File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/db/lpm_divide_otl.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_qlh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_qlh File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/db/sign_div_unsign_qlh.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_uhe.tdf
+    Info (12023): Found entity 1: alt_u_div_uhe File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/db/alt_u_div_uhe.tdf Line: 27
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_t3c.tdf
+    Info (12023): Found entity 1: add_sub_t3c File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/db/add_sub_t3c.tdf Line: 23
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_u3c.tdf
+    Info (12023): Found entity 1: add_sub_u3c File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/db/add_sub_u3c.tdf Line: 23
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod0" File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel.v Line: 138
+Info (12133): Instantiated megafunction "lpm_divide:Mod0" with the following parameter: File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel.v Line: 138
+    Info (12134): Parameter "LPM_WIDTHN" = "16"
+    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_rll.tdf
+    Info (12023): Found entity 1: lpm_divide_rll File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/db/lpm_divide_rll.tdf Line: 25
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Div1" File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel.v Line: 139
+Info (12133): Instantiated megafunction "lpm_divide:Div1" with the following parameter: File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel.v Line: 139
+    Info (12134): Parameter "LPM_WIDTHN" = "16"
+    Info (12134): Parameter "LPM_WIDTHD" = "7"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_rtl.tdf
+    Info (12023): Found entity 1: lpm_divide_rtl File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/db/lpm_divide_rtl.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_tlh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_tlh File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/db/sign_div_unsign_tlh.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_4ie.tdf
+    Info (12023): Found entity 1: alt_u_div_4ie File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/db/alt_u_div_4ie.tdf Line: 27
 Warning (13034): The following nodes have both tri-state and non-tri-state drivers
     Warning (13035): Inserted always-enabled tri-state buffer between "GSENSOR_SDI" and its non-tri-state driver. File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel.v Line: 36
 Warning (13039): The following bidirectional pins have no drivers
     Warning (13040): bidirectional pin "GSENSOR_SDO" has no driver File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel.v Line: 37
 Warning (13009): TRI or OPNDRN buffers permanently enabled
     Warning (13010): Node "GSENSOR_SDI~synth" File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel.v Line: 36
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "HEX0[6]" is stuck at VCC File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel.v Line: 16
-    Warning (13410): Pin "HEX0[5]" is stuck at GND File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel.v Line: 16
-    Warning (13410): Pin "HEX0[4]" is stuck at GND File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel.v Line: 16
-    Warning (13410): Pin "HEX0[3]" is stuck at GND File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel.v Line: 16
-    Warning (13410): Pin "HEX0[2]" is stuck at GND File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel.v Line: 16
-    Warning (13410): Pin "HEX0[1]" is stuck at GND File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel.v Line: 16
-    Warning (13410): Pin "HEX0[0]" is stuck at GND File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel.v Line: 16
-    Warning (13410): Pin "HEX1[6]" is stuck at VCC File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel.v Line: 17
-    Warning (13410): Pin "HEX1[5]" is stuck at GND File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel.v Line: 17
-    Warning (13410): Pin "HEX1[4]" is stuck at GND File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel.v Line: 17
-    Warning (13410): Pin "HEX1[3]" is stuck at GND File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel.v Line: 17
-    Warning (13410): Pin "HEX1[2]" is stuck at GND File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel.v Line: 17
-    Warning (13410): Pin "HEX1[1]" is stuck at GND File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel.v Line: 17
-    Warning (13410): Pin "HEX1[0]" is stuck at GND File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel.v Line: 17
-    Warning (13410): Pin "HEX2[6]" is stuck at VCC File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel.v Line: 18
-    Warning (13410): Pin "HEX2[5]" is stuck at GND File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel.v Line: 18
-    Warning (13410): Pin "HEX2[4]" is stuck at GND File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel.v Line: 18
-    Warning (13410): Pin "HEX2[3]" is stuck at GND File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel.v Line: 18
-    Warning (13410): Pin "HEX2[2]" is stuck at GND File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel.v Line: 18
-    Warning (13410): Pin "HEX2[1]" is stuck at GND File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel.v Line: 18
-    Warning (13410): Pin "HEX2[0]" is stuck at GND File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel.v Line: 18
-    Warning (13410): Pin "HEX3[6]" is stuck at VCC File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel.v Line: 19
-    Warning (13410): Pin "HEX3[5]" is stuck at GND File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel.v Line: 19
-    Warning (13410): Pin "HEX3[4]" is stuck at GND File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel.v Line: 19
-    Warning (13410): Pin "HEX3[3]" is stuck at GND File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel.v Line: 19
-    Warning (13410): Pin "HEX3[2]" is stuck at GND File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel.v Line: 19
-    Warning (13410): Pin "HEX3[1]" is stuck at GND File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel.v Line: 19
-    Warning (13410): Pin "HEX3[0]" is stuck at GND File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel.v Line: 19
-    Warning (13410): Pin "HEX4[6]" is stuck at VCC File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel.v Line: 20
-    Warning (13410): Pin "HEX4[5]" is stuck at GND File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel.v Line: 20
-    Warning (13410): Pin "HEX4[4]" is stuck at GND File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel.v Line: 20
-    Warning (13410): Pin "HEX4[3]" is stuck at GND File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel.v Line: 20
-    Warning (13410): Pin "HEX4[2]" is stuck at GND File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel.v Line: 20
-    Warning (13410): Pin "HEX4[1]" is stuck at GND File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel.v Line: 20
-    Warning (13410): Pin "HEX4[0]" is stuck at GND File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel.v Line: 20
-    Warning (13410): Pin "HEX5[6]" is stuck at VCC File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel.v Line: 21
-    Warning (13410): Pin "HEX5[5]" is stuck at GND File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel.v Line: 21
-    Warning (13410): Pin "HEX5[4]" is stuck at GND File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel.v Line: 21
-    Warning (13410): Pin "HEX5[3]" is stuck at GND File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel.v Line: 21
-    Warning (13410): Pin "HEX5[2]" is stuck at GND File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel.v Line: 21
-    Warning (13410): Pin "HEX5[1]" is stuck at GND File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel.v Line: 21
-    Warning (13410): Pin "HEX5[0]" is stuck at GND File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel.v Line: 21
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 38 registers lost all their fanouts during netlist optimizations.
+Info (17049): 2 registers lost all their fanouts during netlist optimizations.
+Info (17016): Found the following redundant logic cells in design
+    Info (17048): Logic cell "lpm_divide:Mod0|lpm_divide_rll:auto_generated|sign_div_unsign_qlh:divider|alt_u_div_uhe:divider|add_sub_15_result_int[0]~0" File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/db/alt_u_div_uhe.tdf Line: 62
+    Info (17048): Logic cell "lpm_divide:Mod0|lpm_divide_rll:auto_generated|sign_div_unsign_qlh:divider|alt_u_div_uhe:divider|add_sub_6_result_int[0]~10" File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/db/alt_u_div_uhe.tdf Line: 87
+    Info (17048): Logic cell "lpm_divide:Mod0|lpm_divide_rll:auto_generated|sign_div_unsign_qlh:divider|alt_u_div_uhe:divider|add_sub_7_result_int[0]~10" File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/db/alt_u_div_uhe.tdf Line: 92
+    Info (17048): Logic cell "lpm_divide:Mod0|lpm_divide_rll:auto_generated|sign_div_unsign_qlh:divider|alt_u_div_uhe:divider|add_sub_8_result_int[0]~10" File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/db/alt_u_div_uhe.tdf Line: 97
+    Info (17048): Logic cell "lpm_divide:Mod0|lpm_divide_rll:auto_generated|sign_div_unsign_qlh:divider|alt_u_div_uhe:divider|add_sub_9_result_int[0]~10" File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/db/alt_u_div_uhe.tdf Line: 102
+    Info (17048): Logic cell "lpm_divide:Mod0|lpm_divide_rll:auto_generated|sign_div_unsign_qlh:divider|alt_u_div_uhe:divider|add_sub_10_result_int[0]~10" File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/db/alt_u_div_uhe.tdf Line: 37
+    Info (17048): Logic cell "lpm_divide:Mod0|lpm_divide_rll:auto_generated|sign_div_unsign_qlh:divider|alt_u_div_uhe:divider|add_sub_11_result_int[0]~10" File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/db/alt_u_div_uhe.tdf Line: 42
+    Info (17048): Logic cell "lpm_divide:Mod0|lpm_divide_rll:auto_generated|sign_div_unsign_qlh:divider|alt_u_div_uhe:divider|add_sub_12_result_int[0]~10" File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/db/alt_u_div_uhe.tdf Line: 47
+    Info (17048): Logic cell "lpm_divide:Mod0|lpm_divide_rll:auto_generated|sign_div_unsign_qlh:divider|alt_u_div_uhe:divider|add_sub_13_result_int[0]~10" File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/db/alt_u_div_uhe.tdf Line: 52
+    Info (17048): Logic cell "lpm_divide:Mod0|lpm_divide_rll:auto_generated|sign_div_unsign_qlh:divider|alt_u_div_uhe:divider|add_sub_14_result_int[0]~10" File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/db/alt_u_div_uhe.tdf Line: 57
+    Info (17048): Logic cell "lpm_divide:Mod1|lpm_divide_rll:auto_generated|sign_div_unsign_qlh:divider|alt_u_div_uhe:divider|add_sub_15_result_int[0]~0" File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/db/alt_u_div_uhe.tdf Line: 62
+    Info (17048): Logic cell "lpm_divide:Mod1|lpm_divide_rll:auto_generated|sign_div_unsign_qlh:divider|alt_u_div_uhe:divider|add_sub_6_result_int[0]~10" File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/db/alt_u_div_uhe.tdf Line: 87
+    Info (17048): Logic cell "lpm_divide:Mod1|lpm_divide_rll:auto_generated|sign_div_unsign_qlh:divider|alt_u_div_uhe:divider|add_sub_7_result_int[0]~10" File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/db/alt_u_div_uhe.tdf Line: 92
+    Info (17048): Logic cell "lpm_divide:Mod1|lpm_divide_rll:auto_generated|sign_div_unsign_qlh:divider|alt_u_div_uhe:divider|add_sub_8_result_int[0]~10" File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/db/alt_u_div_uhe.tdf Line: 97
+    Info (17048): Logic cell "lpm_divide:Mod1|lpm_divide_rll:auto_generated|sign_div_unsign_qlh:divider|alt_u_div_uhe:divider|add_sub_9_result_int[0]~10" File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/db/alt_u_div_uhe.tdf Line: 102
+    Info (17048): Logic cell "lpm_divide:Mod1|lpm_divide_rll:auto_generated|sign_div_unsign_qlh:divider|alt_u_div_uhe:divider|add_sub_10_result_int[0]~10" File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/db/alt_u_div_uhe.tdf Line: 37
+    Info (17048): Logic cell "lpm_divide:Mod1|lpm_divide_rll:auto_generated|sign_div_unsign_qlh:divider|alt_u_div_uhe:divider|add_sub_11_result_int[0]~10" File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/db/alt_u_div_uhe.tdf Line: 42
+    Info (17048): Logic cell "lpm_divide:Mod1|lpm_divide_rll:auto_generated|sign_div_unsign_qlh:divider|alt_u_div_uhe:divider|add_sub_12_result_int[0]~10" File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/db/alt_u_div_uhe.tdf Line: 47
+    Info (17048): Logic cell "lpm_divide:Mod1|lpm_divide_rll:auto_generated|sign_div_unsign_qlh:divider|alt_u_div_uhe:divider|add_sub_13_result_int[0]~10" File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/db/alt_u_div_uhe.tdf Line: 52
+    Info (17048): Logic cell "lpm_divide:Mod1|lpm_divide_rll:auto_generated|sign_div_unsign_qlh:divider|alt_u_div_uhe:divider|add_sub_14_result_int[0]~10" File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/db/alt_u_div_uhe.tdf Line: 57
+    Info (17048): Logic cell "lpm_divide:Mod2|lpm_divide_rll:auto_generated|sign_div_unsign_qlh:divider|alt_u_div_uhe:divider|add_sub_15_result_int[0]~0" File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/db/alt_u_div_uhe.tdf Line: 62
+    Info (17048): Logic cell "lpm_divide:Mod2|lpm_divide_rll:auto_generated|sign_div_unsign_qlh:divider|alt_u_div_uhe:divider|add_sub_6_result_int[0]~10" File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/db/alt_u_div_uhe.tdf Line: 87
+    Info (17048): Logic cell "lpm_divide:Mod2|lpm_divide_rll:auto_generated|sign_div_unsign_qlh:divider|alt_u_div_uhe:divider|add_sub_7_result_int[0]~10" File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/db/alt_u_div_uhe.tdf Line: 92
+    Info (17048): Logic cell "lpm_divide:Mod2|lpm_divide_rll:auto_generated|sign_div_unsign_qlh:divider|alt_u_div_uhe:divider|add_sub_8_result_int[0]~10" File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/db/alt_u_div_uhe.tdf Line: 97
+    Info (17048): Logic cell "lpm_divide:Mod2|lpm_divide_rll:auto_generated|sign_div_unsign_qlh:divider|alt_u_div_uhe:divider|add_sub_9_result_int[0]~10" File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/db/alt_u_div_uhe.tdf Line: 102
+    Info (17048): Logic cell "lpm_divide:Mod2|lpm_divide_rll:auto_generated|sign_div_unsign_qlh:divider|alt_u_div_uhe:divider|add_sub_10_result_int[0]~10" File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/db/alt_u_div_uhe.tdf Line: 37
+    Info (17048): Logic cell "lpm_divide:Mod2|lpm_divide_rll:auto_generated|sign_div_unsign_qlh:divider|alt_u_div_uhe:divider|add_sub_11_result_int[0]~10" File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/db/alt_u_div_uhe.tdf Line: 42
+    Info (17048): Logic cell "lpm_divide:Mod2|lpm_divide_rll:auto_generated|sign_div_unsign_qlh:divider|alt_u_div_uhe:divider|add_sub_12_result_int[0]~10" File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/db/alt_u_div_uhe.tdf Line: 47
+    Info (17048): Logic cell "lpm_divide:Mod2|lpm_divide_rll:auto_generated|sign_div_unsign_qlh:divider|alt_u_div_uhe:divider|add_sub_13_result_int[0]~10" File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/db/alt_u_div_uhe.tdf Line: 52
+    Info (17048): Logic cell "lpm_divide:Mod2|lpm_divide_rll:auto_generated|sign_div_unsign_qlh:divider|alt_u_div_uhe:divider|add_sub_14_result_int[0]~10" File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/db/alt_u_div_uhe.tdf Line: 57
 Info (144001): Generated suppressed messages file C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/output_files/Accelerometer.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
@@ -1072,17 +1316,17 @@ Warning (21074): Design contains 15 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "SW[9]" File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel.v Line: 30
     Warning (15610): No output dependent on input pin "GSENSOR_INT[1]" File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel.v Line: 34
     Warning (15610): No output dependent on input pin "GSENSOR_INT[2]" File: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/accel.v Line: 34
-Info (21057): Implemented 263 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1926 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 17 input pins
-    Info (21059): Implemented 57 output pins
+    Info (21059): Implemented 102 output pins
     Info (21060): Implemented 2 bidirectional pins
-    Info (21061): Implemented 186 logic cells
+    Info (21061): Implemented 1804 logic cells
     Info (21065): Implemented 1 PLLs
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 91 warnings
-    Info: Peak virtual memory: 4836 megabytes
-    Info: Processing ended: Thu Mar 13 12:16:35 2025
-    Info: Elapsed time: 00:00:07
-    Info: Total CPU time (on all processors): 00:00:20
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 45 warnings
+    Info: Peak virtual memory: 4837 megabytes
+    Info: Processing ended: Thu Mar 13 13:07:39 2025
+    Info: Elapsed time: 00:00:09
+    Info: Total CPU time (on all processors): 00:00:21
 
 
 +------------------------------------------+

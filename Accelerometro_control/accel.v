@@ -13,12 +13,12 @@ module accel (
    input 		          		MAX10_CLK2_50,
 
    //////////// SEG7 //////////
-   output		     [7:0]		HEX0,
-   output		     [7:0]		HEX1,
-   output		     [7:0]		HEX2,
-   output		     [7:0]		HEX3,
-   output		     [7:0]		HEX4,
-   output		     [7:0]		HEX5,
+   output		     [0:6]		HEX0,
+   output		     [0:6]		HEX1,
+   output		     [0:6]		HEX2,
+   output		     [0:6]		HEX3,
+   output		     [0:6]		HEX4,
+   output		     [0:6]		HEX5,
 
    //////////// KEY //////////
    input 		     [1:0]		KEY,
@@ -37,9 +37,9 @@ module accel (
    inout 		          		GSENSOR_SDO,
 	
 	//////////// datos de salida //////////////
-	output		data_out_x,
-	output		data_out_y,
-	output		data_out_z
+	output reg		data_out_x,
+	output reg		data_out_y,
+	output reg		data_out_z
 	
    );
 
@@ -53,7 +53,7 @@ module accel (
 
    // output data
    wire data_update;
-   wire [15:0] data_x, data_y, data_z;
+   wire signed [15:0] data_x, data_y, data_z;
 
 //===== Phase-locked Loop (PLL) instantiation. Code was copied from a module
 //      produced by Quartus' IP Catalog tool.
@@ -112,40 +112,51 @@ begin
 end
 
 
+always @(posedge clk_2_hz)
+begin
+	
+	if (data_x < 0)
+		data_out_x <= -data_x;
+	else
+		data_out_x <= data_x;
+		
+	if (data_y < 0)
+		data_out_y <= -data_y;
+	else
+		data_out_y <= data_y;
+		
+	if (data_x < 0)
+		data_out_z <= -data_z;
+	else
+		data_out_z <= data_z;
+	
+end
 
 
-wire [3:0] unidades_x = data_x_reg %10;
-wire [3:0] decenas_x = (data_x_reg/10)%10;
-wire [3:0] centenas_x = data_x_reg /100;
 
-wire [3:0] unidades_y = data_y_reg%10;
-wire [3:0] decenas_y = (data_y_reg/10)%10;
-wire [3:0] centenas_y = data_y_reg/100;
+wire [3:0] unidades_x = data_out_x %10;
+wire [3:0] decenas_x = (data_out_x/10)%10;
+wire [3:0] centenas_x = data_out_x /100;
 
-wire [3:0] unidades_z = data_z_reg%10;
-wire [3:0] decenas_z = (data_z_reg/10)%10;
-wire [3:0] centenas_z = data_z_reg/100;
+wire [3:0] unidades_y = data_out_y%10;
+wire [3:0] decenas_y = (data_out_y/10)%10;
+wire [3:0] centenas_y = data_out_y/100;
+
+wire [3:0] unidades_z = data_out_z%10;
+wire [3:0] decenas_z = (data_out_z/10)%10;
+wire [3:0] centenas_z = data_out_z/100;
 
 // 7-segment displays HEX0-3 show data_x in hexadecimal
-seg7 s0 (
-   .in      (decenas_x),
-   .display (HEX0) );
+decoder_7_seg s0 (decenas_x, HEX0);
+decoder_7_seg s1 (centenas_x, HEX1);
 
-seg7 s1 (
-   .in      (centenas_x),
-   .display (HEX1) );
+decoder_7_seg s2 (decenas_y, HEX2);
+decoder_7_seg s3 (centenas_y, HEX3);
 
-seg7 s2 (
-   .in      (decenas_y),
-   .display (HEX2) );
+decoder_7_seg s4 (decenas_z, HEX4);
+decoder_7_seg s5 (centenas_z, HEX5);
 
-seg7 s3 (
-   .in      (centenas_y),
-   .display (HEX3) );
 
-// A few statements just to light some LEDs
-seg7 s4 ( .in(decenas_z), .display(HEX4) );
-seg7 s5 ( .in(centenas_z), .display(HEX5) );
 assign LEDR = data_z_reg[9:0];
 
 endmodule

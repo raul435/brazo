@@ -1,5 +1,5 @@
 Assembler report for Accelerometer
-Tue Mar 11 08:41:22 2025
+Thu Mar 13 08:47:47 2025
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -10,7 +10,7 @@ Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
   2. Assembler Summary
   3. Assembler Settings
   4. Assembler Generated Files
-  5. Assembler Device Options: C:/Users/joser/Desktop/diseno con logica programable/Accelerometer/output_files/Accelerometer.sof
+  5. Assembler Device Options: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/output_files/Accelerometer.sof
   6. Assembler Messages
 
 
@@ -38,7 +38,7 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Tue Mar 11 08:41:22 2025 ;
+; Assembler Status      ; Successful - Thu Mar 13 08:47:47 2025 ;
 ; Revision Name         ; Accelerometer                         ;
 ; Top-level Entity Name ; accel                                 ;
 ; Family                ; MAX 10                                ;
@@ -53,23 +53,23 @@ https://fpgasoftware.intel.com/eula.
 +--------+---------+---------------+
 
 
-+---------------------------------------------------------------------------------------------------+
-; Assembler Generated Files                                                                         ;
-+---------------------------------------------------------------------------------------------------+
-; File Name                                                                                         ;
-+---------------------------------------------------------------------------------------------------+
-; C:/Users/joser/Desktop/diseno con logica programable/Accelerometer/output_files/Accelerometer.sof ;
-+---------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------+
+; Assembler Generated Files                                                                  ;
++--------------------------------------------------------------------------------------------+
+; File Name                                                                                  ;
++--------------------------------------------------------------------------------------------+
+; C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/output_files/Accelerometer.sof ;
++--------------------------------------------------------------------------------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------+
-; Assembler Device Options: C:/Users/joser/Desktop/diseno con logica programable/Accelerometer/output_files/Accelerometer.sof ;
-+----------------+------------------------------------------------------------------------------------------------------------+
-; Option         ; Setting                                                                                                    ;
-+----------------+------------------------------------------------------------------------------------------------------------+
-; JTAG usercode  ; 0x0033BCFF                                                                                                 ;
-; Checksum       ; 0x0033BCFF                                                                                                 ;
-+----------------+------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------+
+; Assembler Device Options: C:/Users/joser/Documents/GitHub/brazo/Accelerometro_control/output_files/Accelerometer.sof ;
++----------------+-----------------------------------------------------------------------------------------------------+
+; Option         ; Setting                                                                                             ;
++----------------+-----------------------------------------------------------------------------------------------------+
+; JTAG usercode  ; 0x0028CB88                                                                                          ;
+; Checksum       ; 0x0028CB88                                                                                          ;
++----------------+-----------------------------------------------------------------------------------------------------+
 
 
 +--------------------+
@@ -78,15 +78,15 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime Assembler
     Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
-    Info: Processing started: Tue Mar 11 08:41:19 2025
+    Info: Processing started: Thu Mar 13 08:47:45 2025
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off Accelerometer -c Accelerometer
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Info: Quartus Prime Assembler was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4820 megabytes
-    Info: Processing ended: Tue Mar 11 08:41:22 2025
-    Info: Elapsed time: 00:00:03
+    Info: Peak virtual memory: 4821 megabytes
+    Info: Processing ended: Thu Mar 13 08:47:47 2025
+    Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:02
 
 

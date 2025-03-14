@@ -73,14 +73,14 @@ module brazo (
       .pwm_out(GPIO[0])
    );
 
-   PWM pwm2(
+   PWM3 pwm2(
       .clk(MAX10_CLK1_50),
       .en(SW[0]),
       .data(data_out_y),
       .pwm_out(GPIO[1])
    );
 
-   PWM pwm3(
+   PWM2 pwm3(
       .clk(MAX10_CLK1_50),
       .en(SW[0]),
       .data(data_out_z),

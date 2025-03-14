@@ -1,4 +1,4 @@
-module PWM (
+module PWM2 (
     input wire clk,
     input wire en,
     input wire [15:0] data,
@@ -6,8 +6,8 @@ module PWM (
 );
 
     parameter PERIOD_CYCLES = 1_000_000;
-    parameter MIN_PULSE = 25_000;
-    parameter MAX_PULSE = 125_000;
+    parameter MIN_PULSE = 80_000;
+    parameter MAX_PULSE = 130_000;
 
     reg [7:0] duty_cycle = 25;  // Usamos 8 bits para duty_cycle
     reg [19:0] pulse_duration = MIN_PULSE;
@@ -35,4 +35,5 @@ module PWM (
     end
 
 endmodule
+
 

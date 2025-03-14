@@ -22,6 +22,11 @@
 	input [9:0] SW,
    output [2:0] GPIO
 	);
+	
+	wire [7:0] data_mem_x, data_mem_y, data_mem_z;
+	wire [7:0] data_accel_x, data_accel_y, data_accel_z;
+	wire [7:0] data_out_x, data_out_y, data_out_z;
+	wire state;
 
 wire [15:0] data_out_x, data_out_y, data_out_z;
 

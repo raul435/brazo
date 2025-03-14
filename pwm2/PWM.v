@@ -6,8 +6,8 @@ module PWM (
 );
 
     parameter PERIOD_CYCLES = 1_000_000;
-    parameter MIN_PULSE = 25_000;
-    parameter MAX_PULSE = 125_000;
+    parameter MIN_PULSE = 75_000;
+    parameter MAX_PULSE = 130_000;
 
     reg [7:0] duty_cycle = 50;  // Inicializamos en el 50% de ciclo de trabajo (posicion media)
     reg [19:0] pulse_duration = (MIN_PULSE + MAX_PULSE) / 2;  // Valor medio de pulse_duration

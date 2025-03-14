@@ -7,10 +7,7 @@
 
 module accel (
    //////////// CLOCK //////////
-   input                   ADC_CLK_10,
    input                   MAX10_CLK1_50,
-   input                   MAX10_CLK2_50,
-
    //////////// SEG7 //////////
    output          [7:0]   HEX0,
    output          [7:0]   HEX1,
@@ -19,21 +16,18 @@ module accel (
    output          [7:0]   HEX4,
    output          [7:0]   HEX5,
 
-   //////////// KEY //////////
-   input           [1:0]   KEY,
-
-   //////////// LED //////////
-   output          [9:0]   LEDR,
-
-   //////////// SW //////////
-   input           [9:0]   SW,
-
    //////////// Accelerometer ports //////////
    output                  GSENSOR_CS_N,
    input           [2:1]   GSENSOR_INT,
    output                  GSENSOR_SCLK,
    inout                   GSENSOR_SDI,
-   inout                   GSENSOR_SDO
+   inout                   GSENSOR_SDO,
+	
+	input [1:0] KEY,
+	
+	output reg [15:0] data_out_x, data_out_y, data_out_z
+
+		
    );
 
 //===== Declarations
@@ -57,10 +51,7 @@ module accel (
       );
 
    //===== Instanciación del módulo spi_control para la comunicación con el acelerómetro
-   spi_control #(
-         .SPI_CLK_FREQ   (SPI_CLK_FREQ),
-         .UPDATE_FREQ    (UPDATE_FREQ))
-      spi_ctrl (
+   spi_control spi_ctrl (
          .reset_n    (reset_n),
          .clk        (clk),
          .spi_clk    (spi_clk),
@@ -82,7 +73,7 @@ module accel (
 
    //===== Divisor de reloj para refrescar la visualización a 1 Hz (más lento)
    wire clk_1_hz;
-   clock_divider #(.FREQ(1)) DIVISOR_REFRESH (
+   clock_divider #(.FREQ(2)) DIVISOR_REFRESH (
       .clk(MAX10_CLK1_50),
       .rst(rst_n),
       .clk_div(clk_1_hz)
@@ -110,6 +101,13 @@ module accel (
    wire [7:0] scaled_y = abs_data_y / 10;
    wire [7:0] scaled_z = abs_data_z / 10;
 
+	
+	always @(*)
+	 begin
+		data_out_x = scaled_x;
+		data_out_y = scaled_y;
+		data_out_z = scaled_z;
+	 end
    // Extraer dígitos decenas y unidades para cada eje
    wire [3:0] tens_x = scaled_x / 10;
    wire [3:0] ones_x = scaled_x % 10;

@@ -30,7 +30,8 @@ module brazo (
    );
 
    // Señales que provienen del acelerómetro
-   wire [15:0] data_out_x, data_out_y, data_out_z;
+   wire [15:0] data_acc_x, data_acc_y, data_acc_z;
+	wire [15:0] data_out_x, data_out_y, data_out_z;
 
    // Instanciación del módulo acelerómetro
    accel ac1(
@@ -47,9 +48,9 @@ module brazo (
       .GSENSOR_SDI(GSENSOR_SDI),
       .GSENSOR_SDO(GSENSOR_SDO),
       .KEY(KEY),
-      .data_out_x(data_out_x),
-      .data_out_y(data_out_y),
-      .data_out_z(data_out_z)
+      .data_out_x(data_acc_x),
+      .data_out_y(data_acc_y),
+      .data_out_z(data_acc_z)
    );
 
    // Instanciación del módulo VGA, conectando los datos del acelerómetro
@@ -65,7 +66,46 @@ module brazo (
       .VGA_VS(VGA_VS)
    );
 
-   // Instanciación de los módulos PWM (sin cambios)
+   // maquina de estados
+   FSM fsm1(
+      .clk(MAX10_CLK1_50),
+      .rst(SW[0]),
+      .enable(SW[1]),
+      .btn_mem(SW[2]),
+      .rom_data_x(rom_data_x),
+      .rom_data_y(rom_data_y),
+      .rom_data_z(rom_data_z),
+      .data_accel_x(data_acc_x),
+      .data_accel_y(data_acc_y),
+      .data_accel_z(data_acc_z),
+      .data_out_x(data_out_x),
+      .data_out_y(data_out_y),
+      .data_out_z(data_out_z),
+   );
+   
+   // Instanciación de las ROM (sin cambios)
+   ROM2 #(.DATA_WIDTH(8), .ADDRESS_WIDTH(8), .HEX_FILE("servo1.hex")) rom_x (
+       .ce(1'b1),
+       .read_en(1'b1),
+       .address(SW[9:7]),
+       .data(rom_data_x)
+   );
+   ROM2 #(.DATA_WIDTH(8), .ADDRESS_WIDTH(8), .HEX_FILE("servo2.hex")) rom_y (
+       .ce(1'b1),
+       .read_en(1'b1),
+       .address(SW[9:7]),
+       .data(rom_data_y)
+   );
+   ROM2 #(.DATA_WIDTH(8), .ADDRESS_WIDTH(8), .HEX_FILE("servo3.hex")) rom_z (
+       .ce(1'b1),
+       .read_en(1'b1),
+       .address(SW[9:7]),
+       .data(rom_data_z)
+   );
+	
+	
+
+	// Instanciación de los módulos PWM (sin cambios)
    PWM pwm1(
       .clk(MAX10_CLK1_50),
       .en(SW[0]),
@@ -86,25 +126,5 @@ module brazo (
       .data(data_out_z),
       .pwm_out(GPIO[2])
    );
-
-   // Instanciación de las ROM (sin cambios)
-   ROM2 #(.DATA_WIDTH(8), .ADDRESS_WIDTH(8), .HEX_FILE("servo1.hex")) rom_x (
-       .ce(1'b1),
-       .read_en(1'b1),
-       .address(rom_address),
-       .data(rom_data_x)
-   );
-   ROM2 #(.DATA_WIDTH(8), .ADDRESS_WIDTH(8), .HEX_FILE("servo2.hex")) rom_y (
-       .ce(1'b1),
-       .read_en(1'b1),
-       .address(rom_address),
-       .data(rom_data_y)
-   );
-   ROM2 #(.DATA_WIDTH(8), .ADDRESS_WIDTH(8), .HEX_FILE("servo3.hex")) rom_z (
-       .ce(1'b1),
-       .read_en(1'b1),
-       .address(rom_address),
-       .data(rom_data_z)
-   );
-
+	
 endmodule

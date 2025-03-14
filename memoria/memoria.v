@@ -1,5 +1,5 @@
 module memoria#(parameter DATA_WIDTH = 8, ADDRESS_WIDTH = 32)(
-    input clk, ce, read_enable, wr_en,
+    input clk, ce, read_enable,
     input [7:0] address,
     output reg [7:0] data_out
 );

@@ -1,4 +1,4 @@
-module brazo (
+ module brazo (
 	//////////// CLOCK //////////
    input                   MAX10_CLK1_50,
    //////////// SEG7 //////////
@@ -47,21 +47,21 @@ wire [15:0] data_out_x, data_out_y, data_out_z;
 PWM pwm1(
    .clk(MAX10_CLK1_50),
    .en(SW[0]),
-   .data(rom_data_x/3),
+   .data(data_out_x),
    .pwm_out(GPIO[0])
    );
 
 PWM pwm2(
    .clk(MAX10_CLK1_50),
    .en(SW[0]),
-   .data(rom_data_y/3),
+   .data(data_out_y),
    .pwm_out(GPIO[1])
    );
 
 PWM pwm3(
    .clk(MAX10_CLK1_50),
    .en(SW[0]),
-   .data(rom_data_z/3),
+   .data(data_out_z),
    .pwm_out(GPIO[2])
    );
 	

@@ -6,8 +6,8 @@ module PWM (
 );
 
     parameter PERIOD_CYCLES = 1_000_000;
-    parameter MIN_PULSE = 40_000;
-    parameter MAX_PULSE = 100_000;
+    parameter MIN_PULSE = 25_000;
+    parameter MAX_PULSE = 125_000;
 
     reg [7:0] duty_cycle = 25;  // Usamos 8 bits para duty_cycle
     reg [19:0] pulse_duration = MIN_PULSE;
@@ -24,7 +24,7 @@ module PWM (
 
     always @(posedge clk) begin
         if (!en) begin
-            pwm_out <= 0;
+            pwm_out <= 50;
             cycle_counter <= 0;
         end else begin
             // Ajuste del pulse_duration en base a duty_cycle

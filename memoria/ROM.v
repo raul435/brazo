@@ -1,3 +1,4 @@
+
 module ROM #(parameter DATA_WIDTH = 8, ADDRESS_WIDTH = 8)(
 
 	input ce, read_enable, 

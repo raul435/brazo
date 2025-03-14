@@ -1,4 +1,4 @@
-// Copyright (C) 2024  Intel Corporation. All rights reserved.
+// Copyright (C) 2023  Intel Corporation. All rights reserved.
 // Your use of Intel Corporation's design tools, logic functions 
 // and other software and tools, and any partner logic 
 // functions, and any output files from any of the foregoing 
@@ -15,9 +15,9 @@
 
 // VENDOR "Altera"
 // PROGRAM "Quartus Prime"
-// VERSION "Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition"
+// VERSION "Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition"
 
-// DATE "03/13/2025 20:16:58"
+// DATE "03/13/2025 20:19:07"
 
 // 
 // Device: Altera 10M50DAF484C7G Package FBGA484

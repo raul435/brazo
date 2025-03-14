@@ -6,8 +6,8 @@ module PWM (
 );
 
     parameter PERIOD_CYCLES = 1_000_000;
-    parameter MIN_PULSE = 50_000;
-    parameter MAX_PULSE = 100_000;
+    parameter MIN_PULSE = 75_000;
+    parameter MAX_PULSE = 130_000;
 
     reg [7:0] duty_cycle = 25;  // Usamos 8 bits para duty_cycle
     reg [19:0] pulse_duration = MIN_PULSE;

@@ -7,10 +7,7 @@
 
 module accel (
    //////////// CLOCK //////////
-   input                   ADC_CLK_10,
    input                   MAX10_CLK1_50,
-   input                   MAX10_CLK2_50,
-
    //////////// SEG7 //////////
    output          [7:0]   HEX0,
    output          [7:0]   HEX1,
@@ -19,15 +16,6 @@ module accel (
    output          [7:0]   HEX4,
    output          [7:0]   HEX5,
 
-   //////////// KEY //////////
-   input           [1:0]   KEY,
-
-   //////////// LED //////////
-   output          [9:0]   LEDR,
-
-   //////////// SW //////////
-   input           [9:0]   SW,
-
    //////////// Accelerometer ports //////////
    output                  GSENSOR_CS_N,
    input           [2:1]   GSENSOR_INT,
@@ -35,7 +23,9 @@ module accel (
    inout                   GSENSOR_SDI,
    inout                   GSENSOR_SDO,
 	
-	output reg  data_out_x, data_out_y, data_out_z
+	input [1:0] KEY,
+	
+	output reg [15:0] data_out_x, data_out_y, data_out_z
 
 		
    );
@@ -61,10 +51,7 @@ module accel (
       );
 
    //===== Instanciación del módulo spi_control para la comunicación con el acelerómetro
-   spi_control #(
-         .SPI_CLK_FREQ   (SPI_CLK_FREQ),
-         .UPDATE_FREQ    (UPDATE_FREQ))
-      spi_ctrl (
+   spi_control spi_ctrl (
          .reset_n    (reset_n),
          .clk        (clk),
          .spi_clk    (spi_clk),

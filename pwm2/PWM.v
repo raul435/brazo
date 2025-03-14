@@ -1,7 +1,7 @@
 module PWM (
     input wire clk,
     input wire en,
-    input wire data,
+    input wire [15:0] data,
     output reg pwm_out
 );
 

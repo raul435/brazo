@@ -14,6 +14,6 @@ initial begin
    $readmemH(HEX_FILE, mem);
 end
 
-assign data = (ce && read_en) ? mem[address] : {DATA_WIDTH{1'b0}};
+assign data = mem[address];
 
 endmodule

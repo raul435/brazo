@@ -65,19 +65,19 @@ PWM pwm3(
    .pwm_out(GPIO[2])
    );
 	
-ROM #(.DATA_WIDTH(8), .ADDRESS_WIDTH(8), .HEX_FILE("servo1.hex")) rom_x (
+ROM2 #(.DATA_WIDTH(8), .ADDRESS_WIDTH(8), .HEX_FILE("servo1.hex")) rom_x (
         .ce(1'b1),
         .read_en(1'b1),
         .address(rom_address),
         .data(rom_data_x)
     );
-ROM #(.DATA_WIDTH(8), .ADDRESS_WIDTH(8), .HEX_FILE("servo2.hex")) rom_y (
+ROM2 #(.DATA_WIDTH(8), .ADDRESS_WIDTH(8), .HEX_FILE("servo2.hex")) rom_y (
         .ce(1'b1),
         .read_en(1'b1),
         .address(rom_address),
         .data(rom_data_y)
     );
-ROM #(.DATA_WIDTH(8), .ADDRESS_WIDTH(8), .HEX_FILE("servo3.hex")) rom_z (
+ROM2 #(.DATA_WIDTH(8), .ADDRESS_WIDTH(8), .HEX_FILE("servo3.hex")) rom_z (
         .ce(1'b1),
         .read_en(1'b1),
         .address(rom_address),

@@ -1,5 +1,5 @@
- module brazo (
-	//////////// CLOCK //////////
+module brazo (
+   //////////// CLOCK //////////
    input                   MAX10_CLK1_50,
    //////////// SEG7 //////////
    output          [7:0]   HEX0,
@@ -16,73 +16,95 @@
    inout                   GSENSOR_SDI,
    inout                   GSENSOR_SDO,
 	
-	input [1:0] KEY,
-
-	
-	input [9:0] SW,
-   output [2:0] GPIO
-	);
-
-wire [15:0] data_out_x, data_out_y, data_out_z;
-
-//accel ac1(
-//   .MAX10_CLK1_50(MAX10_CLK1_50),
-//   .HEX0(HEX0),
-//   .HEX1(HEX1),
-//   .HEX2(HEX2),
-//   .HEX3(HEX3),
-//   .HEX4(HEX4),
-//   .HEX5(HEX5),
-//   .GSENSOR_CS_N(GSENSOR_CS_N),
-//   .GSENSOR_INT(GSENSOR_INT),
-//   .GSENSOR_SCLK(GSENSOR_SCLK),
-//   .GSENSOR_SDI(GSENSOR_SDI),
-//   .GSENSOR_SDO(GSENSOR_SDO),
-//	.KEY(KEY),
-//   .data_out_x(data_out_x),
-//   .data_out_y(data_out_y),
-//   .data_out_z(data_out_z)
-//   );
-
-PWM pwm1(
-   .clk(MAX10_CLK1_50),
-   .en(SW[0]),
-   .data(data_out_x),
-   .pwm_out(GPIO[0])
+   input [1:0] KEY,
+   input [9:0] SW,
+   
+   // Salidas VGA (asegúrate de tener los pines disponibles en tu placa)
+   output         [3:0] VGA_R,
+   output         [3:0] VGA_G,
+   output         [3:0] VGA_B,
+   output               VGA_HS,
+   output               VGA_VS,
+   
+   output         [2:0] GPIO
    );
 
-PWM pwm2(
-   .clk(MAX10_CLK1_50),
-   .en(SW[0]),
-   .data(data_out_y),
-   .pwm_out(GPIO[1])
+   // Señales que provienen del acelerómetro
+   wire [15:0] data_out_x, data_out_y, data_out_z;
+
+   // Instanciación del módulo acelerómetro
+   accel ac1(
+      .MAX10_CLK1_50(MAX10_CLK1_50),
+      .HEX0(HEX0),
+      .HEX1(HEX1),
+      .HEX2(HEX2),
+      .HEX3(HEX3),
+      .HEX4(HEX4),
+      .HEX5(HEX5),
+      .GSENSOR_CS_N(GSENSOR_CS_N),
+      .GSENSOR_INT(GSENSOR_INT),
+      .GSENSOR_SCLK(GSENSOR_SCLK),
+      .GSENSOR_SDI(GSENSOR_SDI),
+      .GSENSOR_SDO(GSENSOR_SDO),
+      .KEY(KEY),
+      .data_out_x(data_out_x),
+      .data_out_y(data_out_y),
+      .data_out_z(data_out_z)
    );
 
-PWM pwm3(
-   .clk(MAX10_CLK1_50),
-   .en(SW[0]),
-   .data(data_out_z),
-   .pwm_out(GPIO[2])
+   // Instanciación del módulo VGA, conectando los datos del acelerómetro
+   VGADemo vga1(
+      .MAX10_CLK1_50(MAX10_CLK1_50),
+      .data_x(data_out_x),
+      .data_y(data_out_y),
+      .data_z(data_out_z),
+      .VGA_R(VGA_R),
+      .VGA_G(VGA_G),
+      .VGA_B(VGA_B),
+      .VGA_HS(VGA_HS),
+      .VGA_VS(VGA_VS)
    );
-	
-ROM2 #(.DATA_WIDTH(8), .ADDRESS_WIDTH(8), .HEX_FILE("servo1.hex")) rom_x (
-        .ce(1'b1),
-        .read_en(1'b1),
-        .address(rom_address),
-        .data(rom_data_x)
-    );
-ROM2 #(.DATA_WIDTH(8), .ADDRESS_WIDTH(8), .HEX_FILE("servo2.hex")) rom_y (
-        .ce(1'b1),
-        .read_en(1'b1),
-        .address(rom_address),
-        .data(rom_data_y)
-    );
-ROM2 #(.DATA_WIDTH(8), .ADDRESS_WIDTH(8), .HEX_FILE("servo3.hex")) rom_z (
-        .ce(1'b1),
-        .read_en(1'b1),
-        .address(rom_address),
-        .data(rom_data_z)
-    );
 
+   // Instanciación de los módulos PWM (sin cambios)
+   PWM pwm1(
+      .clk(MAX10_CLK1_50),
+      .en(SW[0]),
+      .data(data_out_x),
+      .pwm_out(GPIO[0])
+   );
+
+   PWM pwm2(
+      .clk(MAX10_CLK1_50),
+      .en(SW[0]),
+      .data(data_out_y),
+      .pwm_out(GPIO[1])
+   );
+
+   PWM pwm3(
+      .clk(MAX10_CLK1_50),
+      .en(SW[0]),
+      .data(data_out_z),
+      .pwm_out(GPIO[2])
+   );
+
+   // Instanciación de las ROM (sin cambios)
+   ROM2 #(.DATA_WIDTH(8), .ADDRESS_WIDTH(8), .HEX_FILE("servo1.hex")) rom_x (
+       .ce(1'b1),
+       .read_en(1'b1),
+       .address(rom_address),
+       .data(rom_data_x)
+   );
+   ROM2 #(.DATA_WIDTH(8), .ADDRESS_WIDTH(8), .HEX_FILE("servo2.hex")) rom_y (
+       .ce(1'b1),
+       .read_en(1'b1),
+       .address(rom_address),
+       .data(rom_data_y)
+   );
+   ROM2 #(.DATA_WIDTH(8), .ADDRESS_WIDTH(8), .HEX_FILE("servo3.hex")) rom_z (
+       .ce(1'b1),
+       .read_en(1'b1),
+       .address(rom_address),
+       .data(rom_data_z)
+   );
 
 endmodule

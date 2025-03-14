@@ -6,8 +6,6 @@ module FSM (
 	input [7:0] data_accel_x, data_accel_y, data_accel_z,
 	output reg [7:0] data_out_x, data_out_y, data_out_z,
 	output reg state
-	
-
 );
 
 localparam IDLE = 0;

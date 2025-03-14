@@ -31,7 +31,25 @@ module brazo (
 
    // Señales que provienen del acelerómetro
    wire [15:0] data_out_x, data_out_y, data_out_z;
-
+	wire [15:0] data_acc_x, data_acc_y, data_acc_z;
+	wire [15:0] rom_address;
+	
+		FSM fsm1(
+      .clk(MAX10_CLK1_50),
+      .rst(KEY[0]),
+      .enable(SW[0]),
+      .btn_mem(SW[1]),
+      .rom_data_x(rom_data_x),
+      .rom_data_y(rom_data_y),
+      .rom_data_z(rom_data_z),
+      .data_accel_x(data_acc_x),
+      .data_accel_y(data_acc_y),
+      .data_accel_z(data_acc_z),
+      .data_out_x(data_out_x),
+      .data_out_y(data_out_y),
+      .data_out_z(data_out_z),
+   );
+	
    // Instanciación del módulo acelerómetro
    accel ac1(
       .MAX10_CLK1_50(MAX10_CLK1_50),
@@ -47,9 +65,9 @@ module brazo (
       .GSENSOR_SDI(GSENSOR_SDI),
       .GSENSOR_SDO(GSENSOR_SDO),
       .KEY(KEY),
-      .data_out_x(data_out_x),
-      .data_out_y(data_out_y),
-      .data_out_z(data_out_z)
+      .data_out_x(data_acc_x),
+      .data_out_y(data_acc_y),
+      .data_out_z(data_acc_z)
    );
 
    // Instanciación del módulo VGA, conectando los datos del acelerómetro
@@ -90,19 +108,19 @@ module brazo (
    // Instanciación de las ROM (sin cambios)
    ROM2 #(.DATA_WIDTH(8), .ADDRESS_WIDTH(8), .HEX_FILE("servo1.hex")) rom_x (
        .ce(1'b1),
-       .read_en(1'b1),
+       .read_en(SW[1]),
        .address(rom_address),
        .data(rom_data_x)
    );
    ROM2 #(.DATA_WIDTH(8), .ADDRESS_WIDTH(8), .HEX_FILE("servo2.hex")) rom_y (
        .ce(1'b1),
-       .read_en(1'b1),
+       .read_en(SW[1]),
        .address(rom_address),
        .data(rom_data_y)
    );
    ROM2 #(.DATA_WIDTH(8), .ADDRESS_WIDTH(8), .HEX_FILE("servo3.hex")) rom_z (
        .ce(1'b1),
-       .read_en(1'b1),
+       .read_en(SW[1]),
        .address(rom_address),
        .data(rom_data_z)
    );

@@ -69,9 +69,9 @@ module brazo (
    // maquina de estados
    FSM fsm1(
       .clk(MAX10_CLK1_50),
-      .rst(SW[0]),
-      .enable(SW[1]),
-      .btn_mem(SW[2]),
+      .rst(KEY[0]),
+      .enable(SW[0]),
+      .btn_mem(SW[1]),
       .rom_data_x(rom_data_x),
       .rom_data_y(rom_data_y),
       .rom_data_z(rom_data_z),

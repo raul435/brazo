@@ -16,7 +16,10 @@ module brazo (
    inout                   GSENSOR_SDI,
    inout                   GSENSOR_SDO,
 	
-	input wire [9:0] SW,
+	input [1:0] KEY,
+
+	
+	input [9:0] SW,
    output [2:0] GPIO
 	);
 
@@ -35,6 +38,7 @@ accel ac1(
    .GSENSOR_SCLK(GSENSOR_SCLK),
    .GSENSOR_SDI(GSENSOR_SDI),
    .GSENSOR_SDO(GSENSOR_SDO),
+	.KEY(KEY),
    .data_out_x(data_out_x),
    .data_out_y(data_out_y),
    .data_out_z(data_out_z)

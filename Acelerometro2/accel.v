@@ -73,7 +73,7 @@ module accel (
 
    //===== Divisor de reloj para refrescar la visualización a 1 Hz (más lento)
    wire clk_1_hz;
-   clock_divider #(.FREQ(1)) DIVISOR_REFRESH (
+   clock_divider #(.FREQ(2)) DIVISOR_REFRESH (
       .clk(MAX10_CLK1_50),
       .rst(rst_n),
       .clk_div(clk_1_hz)

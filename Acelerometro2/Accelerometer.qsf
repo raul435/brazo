@@ -422,7 +422,6 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[34]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[35]
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
-set_global_assignment -name VERILOG_FILE ../02_BCD/clock_divider.v
 set_global_assignment -name VERILOG_FILE test/spi_serdes_tb.v
 set_global_assignment -name VERILOG_FILE test/spi_secondary_mimic.v
 set_global_assignment -name VERILOG_FILE test/spi_control_tb.v
@@ -432,7 +431,6 @@ set_global_assignment -name VERILOG_FILE hdl/spi_control.v
 set_global_assignment -name VERILOG_FILE accel.v
 set_global_assignment -name VERILOG_FILE seg7.v
 set_global_assignment -name QIP_FILE PLL.qip
-set_global_assignment -name TCL_SCRIPT_FILE ../../../../Downloads/DE10_LITE_Golden_Top_project/pin_assigment.tcl
 set_global_assignment -name QIP_FILE PLL_2.qip
 set_global_assignment -name VERILOG_FILE memory_RAM.v
 set_global_assignment -name VERILOG_FILE clock_divider.v

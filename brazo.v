@@ -19,7 +19,7 @@ module brazo (
    input [1:0] KEY,
    input [9:0] SW,
    
-   // Salidas VGA (asegúrate de tener los pines disponibles en tu placa)
+   // Salidas VGA
    output         [3:0] VGA_R,
    output         [3:0] VGA_G,
    output         [3:0] VGA_B,
@@ -33,7 +33,7 @@ module brazo (
    wire [15:0] data_acc_x, data_acc_y, data_acc_z;
 	wire [15:0] data_out_x, data_out_y, data_out_z;
 
-   // Instanciación del módulo acelerómetro
+   // Instanciación acelerómetro
    accel ac1(
       .MAX10_CLK1_50(MAX10_CLK1_50),
       .HEX0(HEX0),
@@ -53,7 +53,7 @@ module brazo (
       .data_out_z(data_acc_z)
    );
 
-   // Instanciación del módulo VGA, conectando los datos del acelerómetro
+   // Instanciación VGA, conectando los datos del acelerómetro
    VGADemo vga1(
       .MAX10_CLK1_50(MAX10_CLK1_50),
       .data_x(data_out_x),
@@ -66,7 +66,7 @@ module brazo (
       .VGA_VS(VGA_VS)
    );
    
-   // Instanciación de las ROM (sin cambios)
+   // Instanciación ROM
    ROM2 #(.DATA_WIDTH(8), .ADDRESS_WIDTH(8), .HEX_FILE("servo1.hex")) rom_x (
        .ce(1),
        .read_en(1),
@@ -104,7 +104,7 @@ module brazo (
    );
 	
 
-	// Instanciación de los módulos PWM (sin cambios)
+	// Instanciación PWM 
    PWM pwm1(
       .clk(MAX10_CLK1_50),
       .en(1),

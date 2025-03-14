@@ -1,20 +1,19 @@
 module FSM (
 
-	input clk, rst, enable
+	input clk, rst, enable,
 	input btn_mem,
-	input [7:0] data_mem_x, data_mem_y, data_mem_z,
+	input [7:0] rom_data_x, rom_data_y, rom_data_z,
 	input [7:0] data_accel_x, data_accel_y, data_accel_z,
-	output reg [7:0] data_out_x, data_out_y, data_out_z,
-	output reg state
+	output reg [7:0] data_out_x, data_out_y, data_out_z
 );
 
 localparam IDLE = 0;
 localparam ACCEL = 1;
 localparam MEM = 2;
 
-reg next_state;
+reg [1:0] state, next_state;
 
-always @(posedge clk, or negedge rst)begin	
+always @(posedge clk or negedge rst)begin	
 	if (~rst)
 		state <= IDLE;
 	else
@@ -50,9 +49,9 @@ always @(state, enable)begin
 		end
 
 		MEM:begin
-			data_out_x <= data_mem_x;
-			data_out_y <= data_mem_y;
-			data_out_z <= data_mem_z;
+			data_out_x <= rom_data_x;
+			data_out_y <= rom_data_y;
+			data_out_z <= rom_data_z;
 		end
 	endcase
 

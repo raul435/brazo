@@ -9,30 +9,30 @@ module PWM (
     parameter MIN_PULSE = 25_000;
     parameter MAX_PULSE = 125_000;
 
-    reg [7:0] duty_cycle = 25;  // Usamos 8 bits para duty_cycle
-    reg [19:0] pulse_duration = MIN_PULSE;
+    reg [7:0] duty_cycle = 50;  // Inicializamos en el 50% de ciclo de trabajo (posicion media)
+    reg [19:0] pulse_duration = (MIN_PULSE + MAX_PULSE) / 2;  // Valor medio de pulse_duration
     reg [19:0] cycle_counter = 0;
 
     // Actualización de duty_cycle
     always @(posedge clk) begin
         if (en) begin
-            duty_cycle <= data*3;  // Asignamos directamente data, ya que está en el rango 0-100
+            duty_cycle <= data;  // Asignamos directamente data (debe estar en el rango 0-100)
         end else begin
-            duty_cycle <= 25;  // Valor por defecto cuando 'en' está deshabilitado
+            duty_cycle <= 25;  // Valor por defecto cuando 'en' está deshabilitado (posición media)
         end
     end
 
     always @(posedge clk) begin
         if (!en) begin
-            pwm_out <= 50;
+            pwm_out <= 0;
             cycle_counter <= 0;
         end else begin
-            // Ajuste del pulse_duration en base a duty_cycle
-            pulse_duration <= MIN_PULSE + ((MAX_PULSE - MIN_PULSE) * duty_cycle) / 125;
+            pulse_duration <= MIN_PULSE + ((MAX_PULSE - MIN_PULSE) * (duty_cycle - 25)) / 100;
             pwm_out <= (cycle_counter < pulse_duration) ? 1 : 0;
             cycle_counter <= (cycle_counter >= PERIOD_CYCLES - 1) ? 0 : cycle_counter + 1;
         end
     end
 
 endmodule
+
 

@@ -25,24 +25,24 @@ module brazo (
 
 wire [15:0] data_out_x, data_out_y, data_out_z;
 
-accel ac1(
-   .MAX10_CLK1_50(MAX10_CLK1_50),
-   .HEX0(HEX0),
-   .HEX1(HEX1),
-   .HEX2(HEX2),
-   .HEX3(HEX3),
-   .HEX4(HEX4),
-   .HEX5(HEX5),
-   .GSENSOR_CS_N(GSENSOR_CS_N),
-   .GSENSOR_INT(GSENSOR_INT),
-   .GSENSOR_SCLK(GSENSOR_SCLK),
-   .GSENSOR_SDI(GSENSOR_SDI),
-   .GSENSOR_SDO(GSENSOR_SDO),
-	.KEY(KEY),
-   .data_out_x(data_out_x),
-   .data_out_y(data_out_y),
-   .data_out_z(data_out_z)
-   );
+//accel ac1(
+//   .MAX10_CLK1_50(MAX10_CLK1_50),
+//   .HEX0(HEX0),
+//   .HEX1(HEX1),
+//   .HEX2(HEX2),
+//   .HEX3(HEX3),
+//   .HEX4(HEX4),
+//   .HEX5(HEX5),
+//   .GSENSOR_CS_N(GSENSOR_CS_N),
+//   .GSENSOR_INT(GSENSOR_INT),
+//   .GSENSOR_SCLK(GSENSOR_SCLK),
+//   .GSENSOR_SDI(GSENSOR_SDI),
+//   .GSENSOR_SDO(GSENSOR_SDO),
+//	.KEY(KEY),
+//   .data_out_x(data_out_x),
+//   .data_out_y(data_out_y),
+//   .data_out_z(data_out_z)
+//   );
 
 PWM pwm1(
    .clk(MAX10_CLK1_50),
@@ -64,5 +64,25 @@ PWM pwm3(
    .data(data_out_z),
    .pwm_out(GPIO[2])
    );
+	
+ROM #(.DATA_WIDTH(8), .ADDRESS_WIDTH(8), .HEX_FILE("servo1.hex")) rom_x (
+        .ce(1'b1),
+        .read_en(1'b1),
+        .address(rom_address),
+        .data(rom_data_x)
+    );
+ROM #(.DATA_WIDTH(8), .ADDRESS_WIDTH(8), .HEX_FILE("servo2.hex")) rom_y (
+        .ce(1'b1),
+        .read_en(1'b1),
+        .address(rom_address),
+        .data(rom_data_y)
+    );
+ROM #(.DATA_WIDTH(8), .ADDRESS_WIDTH(8), .HEX_FILE("servo3.hex")) rom_z (
+        .ce(1'b1),
+        .read_en(1'b1),
+        .address(rom_address),
+        .data(rom_data_z)
+    );
+
 
 endmodule

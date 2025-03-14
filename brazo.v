@@ -19,7 +19,7 @@ module brazo (
    input [1:0] KEY,
    input [9:0] SW,
    
-   // Salidas VGA
+   // Salidas VGA (asegúrate de tener los pines disponibles en tu placa)
    output         [3:0] VGA_R,
    output         [3:0] VGA_G,
    output         [3:0] VGA_B,
@@ -30,10 +30,9 @@ module brazo (
    );
 
    // Señales que provienen del acelerómetro
-   wire [15:0] data_acc_x, data_acc_y, data_acc_z;
-	wire [15:0] data_out_x, data_out_y, data_out_z;
+   wire [15:0] data_out_x, data_out_y, data_out_z;
 
-   // Instanciación acelerómetro
+   // Instanciación del módulo acelerómetro
    accel ac1(
       .MAX10_CLK1_50(MAX10_CLK1_50),
       .HEX0(HEX0),
@@ -48,12 +47,12 @@ module brazo (
       .GSENSOR_SDI(GSENSOR_SDI),
       .GSENSOR_SDO(GSENSOR_SDO),
       .KEY(KEY),
-      .data_out_x(data_acc_x),
-      .data_out_y(data_acc_y),
-      .data_out_z(data_acc_z)
+      .data_out_x(data_out_x),
+      .data_out_y(data_out_y),
+      .data_out_z(data_out_z)
    );
 
-   // Instanciación VGA, conectando los datos del acelerómetro
+   // Instanciación del módulo VGA, conectando los datos del acelerómetro
    VGADemo vga1(
       .MAX10_CLK1_50(MAX10_CLK1_50),
       .data_x(data_out_x),
@@ -65,65 +64,47 @@ module brazo (
       .VGA_HS(VGA_HS),
       .VGA_VS(VGA_VS)
    );
-   
-   // Instanciación ROM
-   ROM2 #(.DATA_WIDTH(8), .ADDRESS_WIDTH(8), .HEX_FILE("servo1.hex")) rom_x (
-       .ce(1),
-       .read_en(1),
-       .address(SW[9:7]),
-       .data(rom_data_x)
-   );
-   ROM2 #(.DATA_WIDTH(8), .ADDRESS_WIDTH(8), .HEX_FILE("servo2.hex")) rom_y (
-       .ce(1'b1),
-       .read_en(1'b1),
-       .address(SW[9:7]),
-       .data(rom_data_y)
-   );
-   ROM2 #(.DATA_WIDTH(8), .ADDRESS_WIDTH(8), .HEX_FILE("servo3.hex")) rom_z (
-       .ce(1'b1),
-       .read_en(1'b1),
-       .address(SW[9:7]),
-       .data(rom_data_z)
-   );
-	
-	   // maquina de estados
-   FSM fsm1(
-      .clk(MAX10_CLK1_50),
-      .rst(KEY[0]),
-      .enable(SW[0]),
-      .btn_mem(SW[1]),
-      .rom_data_x(rom_data_x),
-      .rom_data_y(rom_data_y),
-      .rom_data_z(rom_data_z),
-      .data_accel_x(data_acc_x),
-      .data_accel_y(data_acc_y),
-      .data_accel_z(data_acc_z),
-      .data_out_x(data_out_x),
-      .data_out_y(data_out_y),
-      .data_out_z(data_out_z),
-   );
-	
 
-	// Instanciación PWM 
+   // Instanciación de los módulos PWM (sin cambios)
    PWM pwm1(
       .clk(MAX10_CLK1_50),
-      .en(1),
+      .en(SW[0]),
       .data(data_out_x),
       .pwm_out(GPIO[0])
    );
 
    PWM3 pwm2(
       .clk(MAX10_CLK1_50),
-      .en(1),
+      .en(SW[0]),
       .data(data_out_y),
       .pwm_out(GPIO[1])
    );
 
    PWM2 pwm3(
       .clk(MAX10_CLK1_50),
-      .en(1),
+      .en(SW[0]),
       .data(data_out_z),
       .pwm_out(GPIO[2])
    );
-	
+
+   // Instanciación de las ROM (sin cambios)
+   ROM2 #(.DATA_WIDTH(8), .ADDRESS_WIDTH(8), .HEX_FILE("servo1.hex")) rom_x (
+       .ce(1'b1),
+       .read_en(1'b1),
+       .address(rom_address),
+       .data(rom_data_x)
+   );
+   ROM2 #(.DATA_WIDTH(8), .ADDRESS_WIDTH(8), .HEX_FILE("servo2.hex")) rom_y (
+       .ce(1'b1),
+       .read_en(1'b1),
+       .address(rom_address),
+       .data(rom_data_y)
+   );
+   ROM2 #(.DATA_WIDTH(8), .ADDRESS_WIDTH(8), .HEX_FILE("servo3.hex")) rom_z (
+       .ce(1'b1),
+       .read_en(1'b1),
+       .address(rom_address),
+       .data(rom_data_z)
+   );
+
 endmodule

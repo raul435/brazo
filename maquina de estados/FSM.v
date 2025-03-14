@@ -2,6 +2,9 @@ module FSM (
 
 	input clk, rst, enable
 	input btn_mem,
+	input [7:0] data_mem_x, data_mem_y, data_mem_z,
+	input [7:0] data_accel_x, data_accel_y, data_accel_z,
+	output reg [7:0] data_out_x, data_out_y, data_out_z,
 	output reg state
 	
 
@@ -35,6 +38,28 @@ end
 
 always @(state, enable)begin
 
+	case (state)
+		IDLE:begin
+			data_out_x <= 50;
+			data_out_y <= 50;
+			data_out_z <= 50;
+		end
+
+		ACCEL:begin
+			data_out_x <= data_accel_x;
+			data_out_y <= data_accel_y;
+			data_out_z <= data_accel_z;
+		end
+
+		MEM:begin
+			data_out_x <= data_mem_x;
+			data_out_y <= data_mem_y;
+			data_out_z <= data_mem_z;
+		end
+	endcase
 
 
 end
+
+
+endmodule

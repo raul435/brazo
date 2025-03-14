@@ -37,9 +37,9 @@ always @(state, enable)begin
 
 	case (state)
 		IDLE:begin
-			data_out_x <= 50;
-			data_out_y <= 50;
-			data_out_z <= 50;
+			data_out_x <= 10;
+			data_out_y <= 10;
+			data_out_z <= 10;
 		end
 
 		ACCEL:begin

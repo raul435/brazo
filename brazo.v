@@ -65,23 +65,6 @@ module brazo (
       .VGA_HS(VGA_HS),
       .VGA_VS(VGA_VS)
    );
-
-   // maquina de estados
-   FSM fsm1(
-      .clk(MAX10_CLK1_50),
-      .rst(KEY[0]),
-      .enable(SW[0]),
-      .btn_mem(SW[1]),
-      .rom_data_x(rom_data_x),
-      .rom_data_y(rom_data_y),
-      .rom_data_z(rom_data_z),
-      .data_accel_x(data_acc_x),
-      .data_accel_y(data_acc_y),
-      .data_accel_z(data_acc_z),
-      .data_out_x(data_out_x),
-      .data_out_y(data_out_y),
-      .data_out_z(data_out_z),
-   );
    
    // Instanciación de las ROM (sin cambios)
    ROM2 #(.DATA_WIDTH(8), .ADDRESS_WIDTH(8), .HEX_FILE("servo1.hex")) rom_x (
@@ -103,6 +86,22 @@ module brazo (
        .data(rom_data_z)
    );
 	
+	   // maquina de estados
+   FSM fsm1(
+      .clk(MAX10_CLK1_50),
+      .rst(KEY[0]),
+      .enable(SW[0]),
+      .btn_mem(SW[1]),
+      .rom_data_x(rom_data_x),
+      .rom_data_y(rom_data_y),
+      .rom_data_z(rom_data_z),
+      .data_accel_x(data_acc_x),
+      .data_accel_y(data_acc_y),
+      .data_accel_z(data_acc_z),
+      .data_out_x(data_out_x),
+      .data_out_y(data_out_y),
+      .data_out_z(data_out_z),
+   );
 	
 
 	// Instanciación de los módulos PWM (sin cambios)

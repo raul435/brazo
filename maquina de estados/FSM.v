@@ -20,7 +20,7 @@ always @(posedge clk or negedge rst)begin
 		state <= next_state;
 end
 
-always @(state, enable)begin
+always @(*)begin
 	case (state)
 		IDLE:begin
 			if (btn_mem == 0 && enable ==1) 
@@ -29,11 +29,32 @@ always @(state, enable)begin
 				next_state <= MEM;
 			else
 				next_state <= IDLE;
+			end
+				
+		ACCEL:begin
+			if (btn_mem == 0 && enable ==1) 
+				next_state <= ACCEL;
+			else if (btn_mem == 1 && enable ==1) 
+				next_state <= MEM;
+			else
+				next_state <= IDLE;
+			end
+			
+		MEM:begin
+			if (btn_mem == 0 && enable ==1) 
+				next_state <= ACCEL;
+			else if (btn_mem == 1 && enable ==1) 
+				next_state <= MEM;
+			else
+				next_state <= IDLE;
+		
+		
+		
 		end
 	endcase
 end
 
-always @(state, enable)begin
+always @(*)begin
 
 	case (state)
 		IDLE:begin

@@ -436,7 +436,6 @@ set_global_assignment -name VERILOG_FILE VGA/hvsync_gen.v
 set_global_assignment -name VERILOG_FILE VGA/clk_div.v
 set_global_assignment -name VERILOG_FILE VGA/VGADemo.v
 set_global_assignment -name VERILOG_FILE ROM2.v
-set_global_assignment -name VERILOG_FILE memoria/ROM.v
 set_global_assignment -name VERILOG_FILE Acelerometro2/test/spi_serdes_tb.v
 set_global_assignment -name VERILOG_FILE Acelerometro2/test/spi_secondary_mimic.v
 set_global_assignment -name VERILOG_FILE Acelerometro2/test/spi_control_tb.v
